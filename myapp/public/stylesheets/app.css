@@ -213,6 +213,7 @@ hr {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
+  color:var(--light-gray) ;
 }
 
 .product-box_data span {
@@ -336,6 +337,7 @@ hr {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+  color: var(--verde);
 }
 
 .product-detail-price {
@@ -409,6 +411,7 @@ hr {
 }
 .comments {
   padding: 30px 15px 15px 0;
+  color: #dcdcdc;
 }
 .comments article{
   margin-bottom: 7.5px;
@@ -421,6 +424,7 @@ hr {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-right: 5px;
 }
 .comments .data{
   width: 85%;
@@ -435,10 +439,20 @@ hr {
 }
 
 /*====== Formularios ======*/
+.cajaformulario{
+  margin:auto ;
+  padding: 5rem 4rem 5rem 4rem;
+	width: 100%;
+	max-width: 525px;
+  background-color: #e1cee4fa;
+  box-shadow: 0px 0px 60px 0px rgba(5, 5, 5, 0.253);
+}
+
 .form-label {
   display: inline-block;
   font-size: 1.6em;
   margin: 10px 0;
+  width: 100%;
 }
 
 .form-input {
@@ -462,6 +476,20 @@ textarea.form-input {
   min-height: 140px;
   resize: vertical;
   padding: 15px;
+}
+
+.check{
+  width:20px;
+  height:20px;
+}
+.enviar{
+  font-size: 20px;
+  margin-top: 1rem;
+	border-radius: 2rem;
+	display: block;
+	width: 100%;
+	background-color: var(--violeta);
+	border: none;
 }
 
 /*====== Profile ======*/

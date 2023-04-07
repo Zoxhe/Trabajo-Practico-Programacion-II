@@ -3,13 +3,14 @@ var router = express.Router();
 const productController = require('../controllers/productController')
 
 /* GET home page. */
-router.get('/', productController.index);
+//router.get('/', productController.index);
+//comente este proque en Index ya lo llamabamos
 
 /* GET detalle del producto */
 router.get('/detalle/:id', productController.detalle);
 
 /* GET agregar producto */
-// router.get('/agregar', productController.agregar);
+//router.get('/agregar', productController.agregar);
 
 // /* GET resultados de busqueda */
 // router.get('/busqueda/:q?', productController.busqueda);

@@ -13,7 +13,10 @@ const productController = {
             }
         }
         res.render('product', {auto : auto})
-    }
+    }//,
+    //agregar: function(req, res) {
+    //    res.render('product-add')
+    //}//ver
 }
 
 module.exports = productController
