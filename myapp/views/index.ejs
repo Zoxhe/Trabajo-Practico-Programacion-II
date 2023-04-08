@@ -23,12 +23,13 @@
 					<section class="product-box">
 						<a href="productos/detalle/<%= autos[i].id %>">
 							<figure class="product-box_image">
-								<img src="<%= autos[i].foto %>" alt="<%= autos[i].marca %>">
+								<img src="<%= autos[i].imagen %>" alt="<%= autos[i].nombreDelProducto %>">
 							</figure>
 							
 							<article class="product-box_data">
-								<h2><%= autos[i].marca %> - <%= autos[i].modelo %></h2>
-								<p>Año: <%= autos[i].anio %> - Color: <%= autos[i].color %> - Precio: $<%= autos[i].precio %></p>
+								<h2><%= autos[i].nombreDelProducto %></h2>
+								<h3>$<%= autos[i].precio %></h3>
+								<p><%= autos[i].descripcion %> - Fecha de Carga: <%= autos[i].fechaDeCarga %></p>
 								<p>Comentarios: <%= autos[i].comentarios.length %></p>
 							</article>
 						</a>

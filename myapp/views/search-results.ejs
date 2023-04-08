@@ -11,20 +11,24 @@
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">
+			<!-- muestra los resultados -->
+			
 				<% for (let i = 0; i < productos.length; i++) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
 							<a href="/productos/detalle/<%= productos[i].id %>">
+								<figure class="product-box_image">
+									<img src="<%= productos[i].imagen %>" alt="<%= productos[i].nombreDelProducto %>">
+								</figure>
 								<article class="product-box_data">
-									<h2><%= productos[i].nombreDelProducto %> - <%= productos[i].descripción %></h2>
+									<h2><%= productos[i].nombreDelProducto %></h2>
+									<h3>$<%= productos[i].precio %></h3>
+									<p><%= productos[i].descripcion %> - Fecha de Carga: <%= productos[i].fechaDeCarga %></p>
 								</article>
 							</a>
 						</section>
 					</div>
 				<% } %>
-			</h2>
         </div>
     </div>
 

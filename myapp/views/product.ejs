@@ -6,7 +6,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= auto.marca %> - <%= auto.modelo %></h2> 
+			<h2 class="products-title"><%= auto.nombreDelProducto %></h2> 
 			<p class="product-detail-description">
 				<a href="product-add.html">Editar</a><!--en teoria si esta desloguedo el usuario no puede editar????-->
 			</p>
@@ -14,8 +14,8 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= auto.foto %>" alt="" class="product-detail-img">
-					<p class="product-detail-description">Año: <%= auto.anio %> - Color: <%= auto.color %> - Precio: $<%= auto.precio %>.</p>
+					<img src="<%= auto.imagen %>" alt="" class="product-detail-img">
+					<p class="product-detail-description"><%= auto.descripcion %>- Precio: $<%= auto.precio %>.</p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
@@ -24,11 +24,11 @@
 						<% } else { %>
 							<% for (let i = 0; i < auto.comentarios.length; i++) { %>
 								<article>
-									<img src="<%= auto.comentarios[i].usuario.foto %>" alt="">
+									<img src="<%= auto.comentarios[i].usuario.imagenDePerfil %>" alt="">
 									<div class="data">
-										<p class="user">
-											<strong> <a href="users/detalle/<%= auto.comentarios[i].usuario.id %>">Nombre usuario: <%= auto.comentarios[i].usuario.nombre %></a> </strong>
-											<%= auto.comentarios[i].comentario %>
+										<p class="user"><!--fijarse a donde lleva este href-->
+											<strong> <a href="users/detalle/<%= auto.comentarios[i].usuario.id %>">Usuario: <%= auto.comentarios[i].usuario.nombreDeUsuario %></a> </strong>
+											<%= auto.comentarios[i].textoDelComentario %>
 										</p>
 									</div>
 								</article>

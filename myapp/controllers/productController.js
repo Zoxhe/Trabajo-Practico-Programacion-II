@@ -1,33 +1,35 @@
-const autos = require('../data/productos')
-const usuarios = require('../data/usuariosprueba');
+//const autos = require('../data/productos')
+//const usuarios = require('../data/usuariosprueba');
+const productos = require('../data/datos');
 
 
 const productController = {
     index: function(req, res) {
-        res.render('index', {autos : autos})
+        res.render('index', {autos : productos.productos})
     },
     detalle: function(req, res) {
         let id = req.params.id
         let auto
-        for (let i = 0; i < autos.length; i++) {
-            if (autos[i].id == id) {
-                auto = autos[i]
+        for (let i = 0; i < productos.productos.length; i++) {
+            if (productos.productos[i].id == id) {
+                auto = productos.productos[i]
             }
         }
         res.render('product', {auto : auto})
     },
     busqueda:function(req,res){
-        let nombreDelProducto=req.params.q;
+       
+        let nombreDelProducto=req.query.q;
         let resultado= [];
 
-        for (let i=0; i<usuarios.productos.length;i++){
-            if(nombreDelProducto == usuarios.productos[i].nombreDelProducto){
-                resultado.push(usuarios.productos[i]);
+        for (let i=0; i<productos.productos.length;i++){
+            if(nombreDelProducto == productos.productos[i].nombreDelProducto){
+                resultado.push(productos.productos[i]);
             }
         }
         res.render('search-results', {productos:resultado })
     }
-    
+
     //agregar: function(req, res) {
     //    res.render('product-add')
     //}//ver

@@ -1,4 +1,4 @@
-const usuarios = require('../data/usuariosprueba');
+const usuarios = require('../data/datos');
 
 const userController={
     profile:function(req, res) {
