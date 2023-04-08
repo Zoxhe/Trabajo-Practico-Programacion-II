@@ -11,7 +11,7 @@ const data= {
     productos:[
         {
             id:1,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/ferrari 250.jpg',
             nombreDelProducto: "Ferrari 250 GTO 1963",
             descripción: "Berlinetta de dos plazas, motor delantero, tracción trasera, motor V12 de 3 litros capaz de erogar 300 caballos en la mayoría de los construidos, y una variante más potente, con 4 litros de cilindrada y 330 caballos.",
             fechaDeCarga: "01-03-23",
@@ -23,7 +23,7 @@ const data= {
             }
         },     {
             id:2,
-            imagen: "/images/users/default-image.png",
+            imagen:'/images/img_autos/Rolls-Royce Boat Tail.jpeg',
             nombreDelProducto: "Rolls-Royce Boat Tail",
             descripción: " Cuenta con un motor V12 de 6.75 litros que produce 563 caballos de fuerza y 850 Nm de torque, lo que le permite acelerar de 0 a 100 km/h en solo 4,9 segundos.",
             fechaDeCarga: "02-03-23",
@@ -35,7 +35,7 @@ const data= {
             }
         },     {
             id:3,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/Bugatti ‘La Vouiture Noire’.jpeg',
             nombreDelProducto: "Bugatti ‘La Vouiture Noire’",
             descripción: "Está equipado con un motor W16 de 8.0 litros que produce 1500 caballos de fuerza y 1600 Nm de torque. Puede acelerar de 0 a 100 km/h en solo 2.4 segundos y alcanzar una velocidad máxima de 420 km/h.",
             fechaDeCarga: "03-03-23",
@@ -47,7 +47,7 @@ const data= {
             }
         },     {
             id:4,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/bugatti centodieci.jpeg',
             nombreDelProducto: "Bugatti Centodieci ",
             descripción: "Está equipado con un motor W16 de 8.0 litros que produce 1600 caballos de fuerza y 1600 Nm de torque. Puede acelerar de 0 a 100 km/h en solo 2.4 segundos y alcanzar una velocidad máxima de 380 km/h.",
             fechaDeCarga: "04-03-23", 
@@ -59,7 +59,7 @@ const data= {
             }
         },     {
             id:5,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/Mercedes-Maybach Exelero.jpg',
             nombreDelProducto: "Mercedes-Maybach Exelero",
             descripción: "Está equipado con un motor V12 biturbo de 5.9 litros que produce 700 caballos de fuerza y 1020 Nm de torque. Puede acelerar de 0 a 100 km/h en solo 4.4 segundos y alcanzar una velocidad máxima de 350 km/h",
             fechaDeCarga: "05-03-23",
@@ -71,7 +71,7 @@ const data= {
             }
         },     {
             id:6,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/bugatti divo.jpeg',
             nombreDelProducto: "Bugatti Divo",
             descripción: " Cuenta con un motor W16 de 8.0 litros capaz de producir una potencia de 1,500 caballos de fuerza y un par motor máximo de 1,600 Nm. También tiene con una transmisión automática de 7 velocidades tracción en las cuatro ruedas.",
             fechaDeCarga: "06-03-23",
@@ -84,7 +84,7 @@ const data= {
             }
         },     {
             id:7,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/Koenigsegg CCXR Trevita.jpeg',
             nombreDelProducto: "Koenigsegg CCXR Trevita",
             descripción: "El CCXR Trevita se distingue por su acabado exterior único en fibra de carbono recubierta con diamantes, que le da un aspecto plateado brillante y resplandeciente. Además, cuenta con un motor V8 de 4,8 litros de doble turboalimentación, capaz de generar una potencia de 1.004 caballos de fuerza y un par motor máximo de 1.080 Nm.",
             fechaDeCarga: "07-03-23",
@@ -96,19 +96,19 @@ const data= {
             }
         },     {
             id:8,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/Lamborghini Veneno.jpeg',
             nombreDelProducto: "Lamborghini Veneno ",
             descripción: "El Veneno utiliza un motor V12 de 6.5 litros capaz de producir una potencia máxima de 750 caballos de fuerza, lo que le permite acelerar de 0 a 100 km/h en tan solo 2.8 segundos y alcanzar una velocidad máxima de 355 km/h.",
             fechaDeCarga: "08-03-23",
             comentarios:  {
                 nombreDeUsuario: "sol00",
-                textoDelComentario:" no cumple con lo que promete",
+                textoDelComentario:" lo amo",
                 imagenDePerfil: "foto"
     
             }
         },     {
             id:9,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/Bugatti Chiron Super Sport 300+.jpg',
             nombreDelProducto: "Bugatti Chiron Super Sport 300+",
             descripción: "Utiliza el motor W16 de 8.0 litros y ha sido ajustado para producir una potencia máxima de 1,578 caballos de fuerza y un par motor máximo de 1,600 Nm. También cuenta con una transmisión automática de 7 velocidades y tracción en las cuatro ruedas.",
             fechaDeCarga: "09-03-23",
@@ -120,7 +120,7 @@ const data= {
             }
         },     {
             id:10,
-            imagen: "/images/users/default-image.png",
+            imagen: '/images/img_autos/Lamborghini Sian.jpeg',
             nombreDelProducto: "Lamborghini Sian",
             descripción: "Cuenta con un motor V12 de 6.5 litros que produce 785 caballos de fuerza, junto con un motor eléctrico de 48 voltios que produce 34 caballos de fuerza, lo que da una potencia combinada de 819 caballos de fuerza. El automóvil también cuenta con un sistema de almacenamiento de energía de supercondensadores en lugar de las baterías convencionales.",
             fechaDeCarga: "10-03-23",
