@@ -1,4 +1,6 @@
 const autos = require('../data/productos')
+const usuarios = require('../data/usuariosprueba');
+
 
 const productController = {
     index: function(req, res) {
@@ -13,10 +15,22 @@ const productController = {
             }
         }
         res.render('product', {auto : auto})
-    }//,
+    },
+    busqueda:function(req,res){
+        let nombreDelProducto=req.params.q;
+        let resultado= [];
+
+        for (let i=0; i<usuarios.productos.length;i++){
+            if(nombreDelProducto == usuarios.productos[i].nombreDelProducto){
+                resultado.push(usuarios.productos[i]);
+            }
+        }
+        res.render('search-results', {productos:resultado })
+    }
+    
     //agregar: function(req, res) {
     //    res.render('product-add')
     //}//ver
-}
+};
 
-module.exports = productController
+module.exports = productController;

@@ -13,7 +13,7 @@ router.get('/detalle/:id', productController.detalle);
 //router.get('/agregar', productController.agregar);
 
 // /* GET resultados de busqueda */
-// router.get('/busqueda/:q?', productController.busqueda);
+router.get('/busqueda/:q?', productController.busqueda);
 
 
 module.exports = router;
