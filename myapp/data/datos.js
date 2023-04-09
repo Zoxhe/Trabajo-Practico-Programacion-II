@@ -36,7 +36,89 @@ const data= {
                     
                 }
             ]
-        }/*,{
+        },{
+            id:2,
+            imagen: '/images/img_autos/ferrari 250.jpg',
+            nombreDelProducto: "Ferrari",
+            descripcion: "Berlinetta de dos plazas, motor delantero, tracción trasera, motor V12 de 3 litros capaz de erogar 300 caballos en la mayoría de los construidos, y una variante más potente, con 4 litros de cilindrada y 330 caballos.",
+            fechaDeCarga: "01-03-23",
+            precio:1990000,
+            comentarios: [
+                {
+                    id : 1,
+                    usuario:{
+                        nombreDeUsuario: "florcita12",
+                        imagenDePerfil: "/images/users/default-image.png",
+                    },
+                    textoDelComentario:"me encanto el auto, muy recomendado"
+                    
+                },
+                {   
+                    id:2,
+                    usuario:{
+                        nombreDeUsuario: "flor",
+                        imagenDePerfil: "/images/users/default-image.png",
+                    },
+                    textoDelComentario:"me encanto el autoo"
+                    
+                }
+            ]
+        },{
+            id:3,
+            imagen: '/images/img_autos/ferrari 250.jpg',
+            nombreDelProducto: "Ferrari2",
+            descripcion: "Berlinetta de dos plazas, motor delantero, tracción trasera, motor V12 de 3 litros capaz de erogar 300 caballos en la mayoría de los construidos, y una variante más potente, con 4 litros de cilindrada y 330 caballos.",
+            fechaDeCarga: "01-03-23",
+            precio:1990000,
+            comentarios: [
+                {
+                    id : 1,
+                    usuario:{
+                        nombreDeUsuario: "florcita12",
+                        imagenDePerfil: "/images/users/default-image.png",
+                    },
+                    textoDelComentario:"me encanto el auto, muy recomendado"
+                    
+                },
+                {   
+                    id:2,
+                    usuario:{
+                        nombreDeUsuario: "flor",
+                        imagenDePerfil: "/images/users/default-image.png",
+                    },
+                    textoDelComentario:"me encanto el autoo"
+                    
+                }
+            ]
+        },{
+            id:4,
+            imagen: '/images/img_autos/ferrari 250.jpg',
+            nombreDelProducto: "BUGATTI",
+            descripcion: "Berlinetta de dos plazas, motor delantero, tracción trasera, motor V12 de 3 litros capaz de erogar 300 caballos en la mayoría de los construidos, y una variante más potente, con 4 litros de cilindrada y 330 caballos.",
+            fechaDeCarga: "01-03-23",
+            precio:1990000,
+            comentarios: [
+                {
+                    id : 1,
+                    usuario:{
+                        nombreDeUsuario: "florcita12",
+                        imagenDePerfil: "/images/users/default-image.png",
+                    },
+                    textoDelComentario:"me encanto el auto, muy recomendado"
+                    
+                },
+                {   
+                    id:2,
+                    usuario:{
+                        nombreDeUsuario: "flor",
+                        imagenDePerfil: "/images/users/default-image.png",
+                    },
+                    textoDelComentario:"me encanto el autoo"
+                    
+                }
+            ]
+        }
+        /*,{
             id:2,
             imagen:'/images/img_autos/Rolls-Royce Boat Tail.jpeg',
             nombreDelProducto: "Rolls-Royce Boat Tail",

@@ -19,13 +19,18 @@ const productController = {
     },
     busqueda:function(req,res){
        
-        let nombreDelProducto=req.query.q;
+        let nombreProducto=req.query.q;
         let resultado= [];
 
         for (let i=0; i<productos.productos.length;i++){
-            if(nombreDelProducto == productos.productos[i].nombreDelProducto){
+            let textoproducto= productos.productos[i].nombreDelProducto; 
+            let porcion=textoproducto.substring(0,2)
+
+            if(nombreProducto.includes(porcion)){
                 resultado.push(productos.productos[i]);
+                console.log(i);
             }
+
         }
         res.render('search-results', {productos:resultado })
     }
