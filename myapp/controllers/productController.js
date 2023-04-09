@@ -20,13 +20,16 @@ const productController = {
     busqueda:function(req,res){
        
         let nombreProducto=req.query.q;
+        let nombreProductoMinuscula=nombreProducto.toLocaleLowerCase()
         let resultado= [];
 
         for (let i=0; i<productos.productos.length;i++){
-            let textoproducto= productos.productos[i].nombreDelProducto; 
-            let porcion=textoproducto.substring(0,2)
+            let textoProducto= productos.productos[i].nombreDelProducto; 
+            let textoProductoMinuscula=textoProducto.toLocaleLowerCase()
 
-            if(nombreProducto.includes(porcion)){
+            let porcion=textoProductoMinuscula.substring(0,2)
+
+            if(nombreProductoMinuscula.includes(porcion)){
                 resultado.push(productos.productos[i]);
                 console.log(i);
             }
