@@ -19,27 +19,20 @@ const data= {
             comentarios: [
                 {
                     id : 1,
-                    usuario:{
-                        id:2,
-                        nombreDeUsuario: "florcita12",
-                        imagenDePerfil: "/images/users/default-image.png",
-                    },
+                    nombreDeUsuario: "florcita12",
+                    imagenDePerfil: "/images/users/default-image.png",
                     textoDelComentario:"me encanto el auto, muy recomendado"
                     
                 },
                 {   
                     id:2,
-                    usuario:{
-                        id:3,
-                        nombreDeUsuario: "flor",
-                        imagenDePerfil: "/images/users/default-image.png",
-                    },
+                    nombreDeUsuario: "flor",
+                    imagenDePerfil: "/images/users/default-image.png",
                     textoDelComentario:"me encanto el autoo"
                     
                 }
             ]
-        }
-        /*,{
+        },{
             id:2,
             imagen:'/images/img_autos/Rolls-Royce Boat Tail.jpeg',
             nombreDelProducto: "Rolls-Royce Boat Tail",
@@ -148,7 +141,7 @@ const data= {
                 imagenDePerfil: "foto"
     
             }
-        }*/
+        }
     ]
 
 }

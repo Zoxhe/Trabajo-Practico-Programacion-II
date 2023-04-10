@@ -24,10 +24,10 @@
 						<% } else { %>
 							<% for (let i = 0; i < auto.comentarios.length; i++) { %>
 								<article>
-									<img src="<%= auto.comentarios[i].usuario.imagenDePerfil %>" alt="">
+									<img src="<%= auto.comentarios[i].imagenDePerfil %>" alt="">
 									<div class="data">
 										<p class="user"><!--fijarse a donde lleva este href-->
-											<strong> <a href="/users/profile">Usuario: <%= auto.comentarios[i].usuario.nombreDeUsuario %></a> </strong>
+											<strong> <a href="/users/profile">Usuario: <%= auto.comentarios[i].nombreDeUsuario %></a> </strong>
 											<%= auto.comentarios[i].textoDelComentario %>
 										</p>
 									</div>
