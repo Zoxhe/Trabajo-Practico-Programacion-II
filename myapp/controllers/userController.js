@@ -17,12 +17,6 @@ const userController={
     },
     login:function(req, res) {
         res.render('login')
-    },
-    //ver
-    agregar: function(req, res) {
-        res.render('product-add', {
-            infoUsuario:usuarios.usuario
-        })
     }
 }
 

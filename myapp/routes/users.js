@@ -9,7 +9,7 @@ router.get('/profile', userController.profile);
 router.get('/register', userController.register);
 
 //probar
-router.get('/agregar', userController.agregar);
+
 
 
 module.exports = router;

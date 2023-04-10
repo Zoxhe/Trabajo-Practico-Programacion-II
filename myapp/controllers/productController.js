@@ -31,16 +31,16 @@ const productController = {
 
             if(nombreProductoMinuscula.includes(porcion)){
                 resultado.push(productos.productos[i]);
-                console.log(i);
             }
 
         }
         res.render('search-results', {productos:resultado })
+    },
+    agregar: function(req, res) {
+        res.render('product-add', {
+            infoUsuario:productos.usuario
+        })
     }
-
-    //agregar: function(req, res) {
-    //    res.render('product-add')
-    //}//ver
 };
 
 module.exports = productController;
