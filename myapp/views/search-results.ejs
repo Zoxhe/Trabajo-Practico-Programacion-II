@@ -11,11 +11,33 @@
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
-			</h2>
+			<!-- muestra los resultados -->
+			
+				<% for (let i = 0; i < productos.length; i++) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/productos/detalle/<%= productos[i].id %>">
+								<figure class="product-box_image">
+									<img src="<%= productos[i].imagen %>" alt="<%= productos[i].nombreDelProducto %>">
+								</figure>
+								<article class="product-box_data">
+									<h2><%= productos[i].nombreDelProducto %></h2>
+									<h3>$<%= productos[i].precio %></h3>
+									<p><%= productos[i].descripcion %> - Fecha de Carga: <%= productos[i].fechaDeCarga %></p>
+								</article>
+							</a>
+						</section>
+					</div>
+				<% } %>
+				<% if (productos== 0) { %>
+
+					<div class="noHayResultados">
+						<h2>Oops.. No hay ningun auto que coincida con tu busqueda</h2>
+					</div>
+
+					
+				<% } %>
+				 
         </div>
     </div>
 
