@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap'); /*EJEMPLO*/
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
 /* LINK TIPOGRAFIAS */
 /* https://fonts.google.com/ */
 
@@ -16,6 +17,7 @@
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif;
   --tipografia-h1:'Oswald', sans-serif; /*EJEMPLO*/
+  --letraenuso:'PT Serif', serif;
   --violeta:#DB2EF2;
   --azulcito: #220859;
   --azul: #190840;
@@ -37,7 +39,7 @@ body {
 }
 
 body {
-  font-family: var(--tipografia-h1);
+  font-family: var(--letraenuso);
   font-weight: 300;
   background-color: var(--light-gray);
 }
@@ -53,7 +55,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  font-family: var(--tipografia-h1); /*EJEMPLO*/
+  font-family: var(--letraenuso); /*EJEMPLO*/
 }
 
 figure {
@@ -67,7 +69,7 @@ img {
 
 input,
 textarea {
-  font-family: var(--tipografia-h1);
+  font-family: var(--letraenuso);
 }
 
 hr {
