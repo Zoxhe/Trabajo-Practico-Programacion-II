@@ -42,7 +42,7 @@ const data= {
             comentarios:[ {
                 nombreDeUsuario: "joaqui34",
                 textoDelComentario:" ya se lo presumí a todos los envidiosos ",
-                imagenDePerfil: "foto"
+                imagenDePerfil: "/images/users/default-image.png"
     
             }]      
         }, {
@@ -55,7 +55,7 @@ const data= {
             comentarios: [{
                 nombreDeUsuario: "messi56",
                 textoDelComentario:" ahora soy pobre pero con auto nuevo",
-                imagenDePerfil: "foto"
+                imagenDePerfil: "/images/users/default-image.png"
     
             }]
         },     {
@@ -68,7 +68,7 @@ const data= {
             comentarios: [{
                 nombreDeUsuario: "matteo78",
                 textoDelComentario:" lo uso hasta para comprar el pan",
-                imagenDePerfil: "foto"
+                imagenDePerfil: "/images/users/default-image.png"
     
             }]
         },{
@@ -81,7 +81,7 @@ const data= {
             comentarios: [ {
                 nombreDeUsuario: "benito910",
                 textoDelComentario:" la mejor compra que hice en toda mi vida ",
-                imagenDePerfil: "foto"
+                imagenDePerfil: "/images/users/default-image.png"
     
             }]
         },{
@@ -95,7 +95,7 @@ const data= {
             [{
                 nombreDeUsuario: "miguel1112",
                 textoDelComentario:" me gusto mucho",
-                imagenDePerfil: "foto"
+                imagenDePerfil: "/images/users/default-image.png"
     
             }]
         },{
@@ -108,7 +108,7 @@ const data= {
             comentarios: [{
                 nombreDeUsuario: "brian1314",
                 textoDelComentario:" no esta mal pero esperaba más ",
-                imagenDePerfil: "foto"
+                imagenDePerfil: "/images/users/default-image.png"
     
             }]
         },{
@@ -120,8 +120,8 @@ const data= {
             precio:1990000,
             comentarios:  [{
                 nombreDeUsuario: "sol00",
-                textoDelComentario:" lo amo",
-                imagenDePerfil: "foto"
+                textoDelComentario:"lo amo",
+                imagenDePerfil: "/images/users/default-image.png"
 
             }]
         },{
@@ -134,7 +134,7 @@ const data= {
             comentarios:  [{
                 nombreDeUsuario: "user000",
                 textoDelComentario:" se lo compré a mi hijo y le encantó, recomendadísimo",
-                imagenDePerfil: "foto"
+                imagenDePerfil: "/images/users/default-image.png"
     
             }]
         },{
@@ -147,7 +147,7 @@ const data= {
             comentarios: [{
                 nombreDeUsuario: "marquito123",
                 textoDelComentario:"El mejor auto lejos",
-                imagenDePerfil: "foto"
+                imagenDePerfil: "/images/users/default-image.png"
     
             }]
         }
