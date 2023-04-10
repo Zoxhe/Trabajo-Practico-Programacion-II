@@ -20,6 +20,7 @@ const data= {
                 {
                     id : 1,
                     usuario:{
+                        id:2,
                         nombreDeUsuario: "florcita12",
                         imagenDePerfil: "/images/users/default-image.png",
                     },
@@ -29,6 +30,7 @@ const data= {
                 {   
                     id:2,
                     usuario:{
+                        id:3,
                         nombreDeUsuario: "flor",
                         imagenDePerfil: "/images/users/default-image.png",
                     },
