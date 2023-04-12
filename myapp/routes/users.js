@@ -8,8 +8,6 @@ router.get('/profile-edit', userController.profileEdit);
 router.get('/profile', userController.profile);
 router.get('/register', userController.register);
 
-//probar
-
 
 
 module.exports = router;

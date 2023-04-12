@@ -1,5 +1,4 @@
-//const autos = require('../data/productos')
-//const usuarios = require('../data/usuariosprueba');
+
 const productos = require('../data/datos');
 
 
