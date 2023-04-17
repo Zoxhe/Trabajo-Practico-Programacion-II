@@ -17,7 +17,6 @@ create table usuarios (
 	updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 	
 );
--- CREAR BASE DE DATOS
 create table productos (
 -- Nombre 				Tipo 		  Restricción
 	ID          		int           unsigned primary key auto_increment,
