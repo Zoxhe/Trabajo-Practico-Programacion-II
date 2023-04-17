@@ -41,7 +41,7 @@ const data= {
             precio:28000000,
             comentarios:[ {
                 nombreDeUsuario: "joaqui34",
-                textoDelComentario:" ya se lo presumí a todos el mundo ",
+                textoDelComentario:" ya se lo presumí a todo el mundo ",
                 imagenDePerfil: "/images/users/default-image.png"
     
             }]      
