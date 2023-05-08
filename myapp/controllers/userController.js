@@ -8,7 +8,7 @@ const userController={
         })
     },
     profileEdit:function(req, res) {
-        res.render('profile-edit', {
+        res.render('profile-edit', { //Express utiliza el método .render() para enviar la vista al navegador. Se encarga de procesar el archivo EJS y enviar el HTML resultante al navegador.
             infoUsuario:usuarios.usuario
         })
     },
