@@ -1,13 +1,13 @@
 
-const productos = require('../data/datos');
+const productos = require('../data/datos');  //aca basicamente estamos llamando a los modulos que vamos a utilizar o necesitar 
 
 
-const productController = {
+const productController = { //varaibel co un objeto literal que contendra un metodo para cada request
     index: function(req, res) {
         res.render('index', {autos : productos.productos})
     },
     detalle: function(req, res) {
-        let id = req.params.id
+        let id = req.params.id //Haciendo uso de la propiedad params del objeto literal  request podemos capturar esos valores parametrizados y así empezar a definir qué hacer con cada uno de ellos.
         let auto
         for (let i = 0; i < productos.productos.length; i++) {
             if (productos.productos[i].id == id) {

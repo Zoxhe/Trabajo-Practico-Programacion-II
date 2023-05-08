@@ -1,11 +1,11 @@
 var createError = require('http-errors');
-var express = require('express');
+var express = require('express'); //Express-generator crea de manera automática una estructura de carpetas, archivos y dependencias que nos sirven para inicializar cualquier aplicación.
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var productosRouter = require('./routes/productos');
+var productosRouter = require('./routes/productos'); //Para implementarlo dentro de app.js , creamos una constante y requerimos el módulo.
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -14,16 +14,17 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
+app.use(logger('dev')); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); //esto especifica que por default las imagenes estaran siempre en public. entonces al usarlas solo ponemos el nombre de la carpeta y el archivo donde estan dentro de public.
 
 //rutas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/productos', productosRouter);
+app.use('/productos', productosRouter); // método  use()     que recibe dos parámetros. El primero un string que será el nombre del recurso, en este caso productos. Al ser una ruta debe empezar con la /. El segundo un string que será el nombre de la constante en la que almacenamos el módulo del recurso. 
+// De esta forma estamos definiendo que cada solicitud del recurso productos sea atendida por el módulo rutasProductos y toda su lógica.
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

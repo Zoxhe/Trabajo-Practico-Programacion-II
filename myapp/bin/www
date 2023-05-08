@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+//   www   sin extensión. que trae definida la lógica interna que se encargará de hacer que la aplicación se inicialice (arranque).
 /**
  * Module dependencies.
  */

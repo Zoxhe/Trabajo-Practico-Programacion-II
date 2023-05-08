@@ -17,7 +17,6 @@ create table usuarios (
 	updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 	
 );
--- CREAR BASE DE DATOS
 create table productos (
 -- Nombre 				Tipo 		  Restricción
 	ID          		int           unsigned primary key auto_increment,
@@ -68,7 +67,7 @@ insert into productos values (default, 'Lamborghini Sian', 5, 'Cuenta con un mot
 -- Insertar datos a la tabla de comentarios
 -- Post 1
 insert into comentarios values (default,1,1,'me encanto el auto, muy recomendado',default,default);
-insert into comentarios values (default,2,1,' ya se lo presumí a todos el mundo',default,default);
+insert into comentarios values (default,2,1,' ya se lo presumí a todo el mundo',default,default);
 insert into comentarios values (default,3,1,'lo uso hasta para comprar el pan',default,default);
 insert into comentarios values (default,4,1,'la mejor compra que hice en toda mi vida',default,default);
 insert into comentarios values (default,5,1,'gasté mi sueldo de por lo menos 8 años pero valió la pena',default,default);
@@ -76,10 +75,10 @@ insert into comentarios values (default,5,1,'gasté mi sueldo de por lo menos 8 
 insert into comentarios values (default,1,2,'en 10 años vuelvo para comprarlo',default,default);
 insert into comentarios values (default,2,2,' lo necesitoooo',default,default);
 insert into comentarios values (default,3,2,'lo quiero ya',default,default);
-insert into comentarios values (default,4,2,'es muuuy exclusivo, espero poder comprarlo',default,default);
+insert into comentarios values (default,4,2,'es muuuy exclusivo, lo quiero',default,default);
 insert into comentarios values (default,5,2,'donde lo coonsiguieron, hay pocos de estos en el mundo',default,default);
 -- Post 3
-insert into comentarios values (default,1,3,'me gustó musho',default,default);
+insert into comentarios values (default,1,3,'me gustó mucho',default,default);
 insert into comentarios values (default,2,3,' el mejor auto lejos',default,default);
 insert into comentarios values (default,3,3,'se lo compré a mi hijo y le encantó, recomendadísimo',default,default);
 insert into comentarios values (default,4,3,'no esta mal pero esperaba más',default,default);
@@ -103,16 +102,16 @@ insert into comentarios values (default,3,6,'mis felicitaciones para los adminis
 insert into comentarios values (default,4,6,'estoy enamorada del auto',default,default);
 insert into comentarios values (default,5,6,'lo amo banda',default,default);
 -- Post 7 
-insert into comentarios values (default,1,7,'me encanto el auto, muy recomendado',default,default);
-insert into comentarios values (default,2,7,' ya se lo presumí a todos el mundo',default,default);
-insert into comentarios values (default,3,7,'lo uso hasta para comprar el pan',default,default);
-insert into comentarios values (default,4,7,'la mejor compra que hice en toda mi vida',default,default);
-insert into comentarios values (default,5,7,'gasté mi sueldo de por lo menos 8 años pero valió la pena',default,default);
+insert into comentarios values (default,1,7,'lo mega recomiendo',default,default);
+insert into comentarios values (default,2,7,' es lo mejor de lo mejor en autos',default,default);
+insert into comentarios values (default,3,7,'estoy muy emocionada,acabo de comprarlooo',default,default);
+insert into comentarios values (default,4,7,'espero que la Afip no me persiga por esto',default,default);
+insert into comentarios values (default,5,7,'los lambo son mejores',default,default);
 -- Post 8
 insert into comentarios values (default,1,8,'si tienen la posibilidad de comprarlo, háganlo no se van a arrepentir',default,default);
-insert into comentarios values (default,2,8,' ya se lo presumí a todos el mundo',default,default);
+insert into comentarios values (default,2,8,'elegí ser feliz y lo compré',default,default);
 insert into comentarios values (default,3,8,'no solo cuesta comprarlo sino también manternerlo pero lo recomiendo',default,default);
-insert into comentarios values (default,4,8,'es el mejor de todos los autos de alta gama en mi opinión',default,default);
+insert into comentarios values (default,4,8,'es el mejor de todos los autos de alta gama en mi humilde opinión',default,default);
 insert into comentarios values (default,5,8,'muy fachero',default,default);
 -- Post 9
 insert into comentarios values (default,1,9,'mi amigo se compró uno y esta tremendo',default,default);

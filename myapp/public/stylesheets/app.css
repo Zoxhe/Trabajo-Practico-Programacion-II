@@ -306,6 +306,8 @@ hr {
 .footer-data p {
   color: var(--verde);
   font-size: 1.5em;
+/* /public podremos guardar todos los recursos estáticos de nuestra aplicación. */
+
   font-weight: 300;
 }
 
