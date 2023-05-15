@@ -1,8 +1,30 @@
 
-const productos = require('../data/datos');  //aca basicamente estamos llamando a los modulos que vamos a utilizar o necesitar 
+//const productos = require('../data/datos');  //aca basicamente estamos llamando a los modulos que vamos a utilizar o necesitar 
 
 
-const productController = { //varaibel co un objeto literal que contendra un metodo para cada request
+const db = require('../database/models'); //requerimos los modelos.
+
+//Seleccionamos el modelo sobre el cual queremos aplicar el método findAll(). En este caso: producto
+const productos = db.Productos; //Alias del modelo
+
+const productController = {
+  findAll: (req, res) => {
+
+    productos.findAll()
+    .then(function (result) {
+        return res.render("index", { autos : result });   
+    }).catch(function (err){
+        console.log(err);
+    });
+  }
+
+}; 
+
+module.exports = productController;
+
+
+
+/*const productController = { //varaibel co un objeto literal que contendra un metodo para cada request
     index: function(req, res) {
         res.render('index', {autos : productos.productos})
     },
@@ -40,6 +62,5 @@ const productController = { //varaibel co un objeto literal que contendra un met
             infoUsuario:productos.usuario
         })
     }
-};
+};*/
 
-module.exports = productController;
