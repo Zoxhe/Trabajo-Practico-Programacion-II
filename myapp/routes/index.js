@@ -6,7 +6,7 @@ var router = express.Router(); //Este método nos va a permitir modularizar por 
 const productController = require('../controllers/productController') // para poder utilizar los metodos que nosotros ubicamos en controladores, vamos a requerir el modulo dentro de los archivos de ruteo
 
 /* GET home page. */
-router.get('/', productController.index); //Para terminar de configurar la ruta, en el ruteador pasamos como segundo parámetro al método correspondiente usando la notación de punto de los objetos literales.
+router.get('/', productController.findAll); //Para terminar de configurar la ruta, en el ruteador pasamos como segundo parámetro al método correspondiente usando la notación de punto de los objetos literales.
 // Definimos las rutas que consideremos necesarias para manejar distintos tipos de request.
 module.exports = router;
 

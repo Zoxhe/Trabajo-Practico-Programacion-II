@@ -2,7 +2,7 @@
 module.exports = function(sequelize, dataTypes) {
 
     /* Crear 3 variables */
-    let alias = "Productos"; /* Un apodo para requerirlo en los controllers */
+    let alias = "product"; /* Un apodo para requerirlo en los controllers */
 
     /* mapeo exacto de cada una de las columnas */
     let cols = {
@@ -29,13 +29,19 @@ module.exports = function(sequelize, dataTypes) {
         FechaDeCarga:{
             type: dataTypes.DATE,
         },
+        createdAt:{
+            type: dataTypes.DATE,
+        },
+        updatedAt:{
+            type:dataTypes.DATE
+        }
     }
 
     /* Obj literal paa configurar la tabla */
     let config = {
         tableName: 'productos',
-        timestamps: true, //Si la tabla no tiene los campos created_at y updated_at
-        underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
+        timestamps: false, //Si la tabla no tiene los campos created_at y updated_at
+        underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
 
     const productos = sequelize.define(alias, cols, config);

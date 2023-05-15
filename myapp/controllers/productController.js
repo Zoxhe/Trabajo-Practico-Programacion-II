@@ -3,23 +3,23 @@
 
 
 const db = require('../database/models'); //requerimos los modelos.
-
 //Seleccionamos el modelo sobre el cual queremos aplicar el método findAll(). En este caso: producto
-const productos = db.Productos; //Alias del modelo
+const productos = db.product; //Alias del modelo
+let op=db.Sequelize.Op;
 
 const productController = {
-  findAll: (req, res) => {
-
-    productos.findAll()
-    .then(function (result) {
-        return res.render("index", { autos : result });   
-    }).catch(function (err){
-        console.log(err);
-    });
-  }
-
-}; 
-
+    findAll: (req, res) => {
+      productos.findAll()
+      .then(function (result) {
+          return res.render("index", { autos: result });   
+      })
+      .catch(function (err){
+          console.log(err);
+      });
+    }
+  
+  }; 
+  
 module.exports = productController;
 
 
