@@ -5,7 +5,6 @@
 const db = require('../database/models'); //requerimos los modelos.
 //Seleccionamos el modelo sobre el cual queremos aplicar el método findAll(). En este caso: producto
 const productos = db.product; //Alias del modelo
-let op=db.Sequelize.Op;
 
 const productController = {
     findAll: (req, res) => {
