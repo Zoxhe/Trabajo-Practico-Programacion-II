@@ -84,7 +84,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--verdeoscuro);
+  background: linear-gradient(#ffffff, #000000);
 }
 
 .main-header_home-link,
@@ -141,11 +141,13 @@ hr {
 .main-navbar {
   margin-top: 20px;
   display: none;
+  padding-bottom: 5%;
 }
 
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
+  color: black;/* color del los textos del navbar*/
 }
 
 .logout{
@@ -187,7 +189,8 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--azulletra);
+  color:#D90754;
+ 
 }
 
 .product-box {
@@ -283,7 +286,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: var(--verderaro);
+  background: linear-gradient(#000000, #ffffff 60%);
   padding: 20px 0;
   margin-top: 80px;
 }
@@ -293,18 +296,18 @@ hr {
 }
 
 .footer-data i {
-  color: var(--violeta);
+  color:#D90754;
   font-size: 3.5em;
 }
 
-.footer-data h2 {
-  color: var(--verde);
+.footer-data h2 {/*info de footer*/
+  color:#D90754 ;
   font-size: 2.4em;
   font-weight: 400;
 }
 
 .footer-data p {
-  color: var(--verde);
+  color:#D90754 ;
   font-size: 1.5em;
 /* /public podremos guardar todos los recursos estáticos de nuestra aplicación. */
 
