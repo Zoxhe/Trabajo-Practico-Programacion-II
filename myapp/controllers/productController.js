@@ -10,13 +10,13 @@ const productController = {
     findAll: (req, res) => {
       productos.findAll()
       .then(function (result) {
-          return res.render("index", { autos: result });   
+          return res.render('index', { autos: result });  
       })
       .catch(function (err){
           console.log(err);
+
       });
-    }
-  
+    },
   }; 
   
 module.exports = productController;

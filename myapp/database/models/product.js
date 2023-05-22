@@ -9,28 +9,28 @@ module.exports = function(sequelize, dataTypes) {
         ID:{
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER
         },
         NombreDelProducto:{
-            type: dataTypes.VARCHART,
+            type: dataTypes.STRING
         },
         IDUser:{
-            type: dataTypes.INT,
+            type: dataTypes.INTEGER
         },
         Descripción:{
-            type: dataTypes.VARCHART,
+            type: dataTypes.STRING
         },
         Imagen:{
-            type: dataTypes.VARCHART,
+            type: dataTypes.STRING
         },
         Precio:{
-            type: dataTypes.INT,
+            type: dataTypes.INTEGER
         },
         FechaDeCarga:{
-            type: dataTypes.DATE,
+            type: dataTypes.DATE
         },
         createdAt:{
-            type: dataTypes.DATE,
+            type: dataTypes.DATE
         },
         updatedAt:{
             type:dataTypes.DATE
@@ -40,7 +40,7 @@ module.exports = function(sequelize, dataTypes) {
     /* Obj literal paa configurar la tabla */
     let config = {
         tableName: 'productos',
-        timestamps: false, //Si la tabla no tiene los campos created_at y updated_at
+        timestamps: true, //Si la tabla no tiene los campos created_at y updated_at
         underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
 
