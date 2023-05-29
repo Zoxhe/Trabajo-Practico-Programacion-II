@@ -1,4 +1,3 @@
-
 //const productos = require('../data/datos');  //aca basicamente estamos llamando a los modulos que vamos a utilizar o necesitar 
 
 
@@ -8,7 +7,12 @@ const productos = db.product; //Alias del modelo
 
 const productController = {
     findAll: (req, res) => {
-      productos.findAll()
+      productos.findAll({
+        include: [{association: "user"}],
+        order: [
+            ['createdAt', 'DESC']
+        ]
+      })
       .then(function (result) {
           return res.render('index', { autos: result });  
       })

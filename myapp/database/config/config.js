@@ -1,7 +1,7 @@
 module.exports={
   "development": {
     "username": "root",
-    "password": null,
+    "password": "root", // password en mac es "root" - en windows es null
     "database": "data",
     "host": "127.0.0.1",
     "dialect": "mysql"

@@ -1,0 +1,6 @@
+a = 10
+b = 32000
+c = b/c
+texto + 'hola, tu numero es' + str(a)
+print(texto, a)
+
