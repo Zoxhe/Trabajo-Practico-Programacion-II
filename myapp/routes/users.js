@@ -22,6 +22,8 @@ router.get('/login', userController.login);
 router.get('/profile-edit', userController.profileEdit);
 router.get('/profile', userController.profile);
 router.get('/register', userController.register);
+router.get('/busqueda/:q?', userController.busqueda);
+
 
 router.post('/register',  upload.single('imagenDePerfil'), userController.proceso_registro);
 // AGREGAR RUTA LOGOUT

@@ -56,6 +56,27 @@ function validar_password(password) {
 }
 
 const userController={
+    busqueda:(req,res)=>{
+        let nombrePersona=req.query.qP;
+        const op=db.Sequelize.Op;
+            productos.findAll({
+                where:
+                    {[op.or]:[
+                        {Nombre:{[op.like]: "%"+nombrePersona +"%"}},
+                        {Email:{[op.like]: "%"+nombrePersona +"%"}}
+                    ]},
+                order:[
+                    ['ID','DESC']
+                ],
+            })
+            .then(function (result) {
+                return res.render('search-results-users', { personas: result });  
+            })
+            .catch(function (err){
+                console.log(err);
+      
+            });
+        },
     profile:function(req, res) {
         res.render('profile', {
             infoUsuario:usuarios.usuario,

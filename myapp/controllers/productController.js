@@ -23,7 +23,6 @@ const productController = {
       });
     },
     busqueda:(req,res)=>{
-        if(req.query.q){
         let nombreProducto=req.query.q;
         const op=db.Sequelize.Op;
             productos.findAll({
@@ -45,31 +44,6 @@ const productController = {
       
             });
         } 
-        else if(req.query.qP){
-        let nombreProducto=req.query.qP;
-        const op=db.Sequelize.Op;
-            productos.findAll({
-                where:
-                    {[op.or]:[
-                        {NombreDelProducto:{[op.like]: "%"+nombreProducto +"%"}},
-                        {Descripción:{[op.like]: "%"+nombreProducto +"%"}}
-                    ]},
-                order:[
-                    ['ID','DESC']
-                ],
-                include: [{association: "user"}]
-            })
-            .then(function (result) {
-                return res.render('search-results', { productos: result });  
-            })
-            .catch(function (err){
-                console.log(err);
-      
-            });
-        }
-
-    }
-        
   }; 
   
 module.exports = productController;
