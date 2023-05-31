@@ -114,16 +114,26 @@ hr {
   font-size: 1.5em;
 }
 
-.search-form_button {
+.botones{
   position: absolute;
+  margin-left: 80%;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  padding: 11px;
+  border-radius: 3px;
+  border-left: none;
+}
+.search-form_button {
   right: 2px;
   height: 60%;
-  background-color: #ffffff;
+  background-color:#ffffff;
   border: none;
   border-left: solid 1px var(--violeta);
   color: var(--gray);
   cursor: pointer;
 }
+
 
 
 /*====== Main Navbar ======*/
