@@ -1,6 +1,7 @@
 //const productos = require('../data/datos');  //aca basicamente estamos llamando a los modulos que vamos a utilizar o necesitar 
 
 
+const { or } = require('sequelize');
 const db = require('../database/models'); //requerimos los modelos.
 //Seleccionamos el modelo sobre el cual queremos aplicar el método findAll(). En este caso: producto
 const productos = db.product; //Alias del modelo
@@ -21,6 +22,28 @@ const productController = {
 
       });
     },
+    busqueda:(req,res)=>{
+        let nombreProducto=req.query.q;
+        const op=db.Sequelize.Op;
+        productos.findAll({
+            where:
+                {[op.or]:[
+                    {NombreDelProducto:{[op.like]: "%"+nombreProducto +"%"}},
+                    {Descripción:{[op.like]: "%"+nombreProducto +"%"}}
+                ]},
+            order:[
+                ['ID','DESC']
+            ],
+            include: [{association: "user"}]
+        })
+        .then(function (result) {
+            return res.render('search-results', { productos: result });  
+        })
+        .catch(function (err){
+            console.log(err);
+  
+        });
+    }
   }; 
   
 module.exports = productController;

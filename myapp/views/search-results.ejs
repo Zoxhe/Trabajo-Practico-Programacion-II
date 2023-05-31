@@ -16,14 +16,15 @@
 				<% for (let i = 0; i < productos.length; i++) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
-							<a href="/productos/detalle/<%= productos[i].id %>">
+							<a href="/productos/detalle/<%= productos[i].ID %>">
 								<figure class="product-box_image">
-									<img src="<%= productos[i].imagen %>" alt="<%= productos[i].nombreDelProducto %>">
+									<img src="<%= productos[i].Imagen %>" alt="<%= productos[i].NombreDelProducto %>">
 								</figure>
 								<article class="product-box_data">
-									<h2><%= productos[i].nombreDelProducto %></h2>
-									<h3>$<%= productos[i].precio %></h3>
-									<p><%= productos[i].descripcion %> - Fecha de Carga: <%= productos[i].fechaDeCarga %></p>
+									<h2><%= productos[i].NombreDelProducto %></h2>
+									<h3>$<%= productos[i].Precio %></h3>
+									<p><%= productos[i].Descripción %> - Fecha de Carga: <%= productos[i].FechaDeCarga %></p>
+									<p><a href="/users/detalle/<%= productos[i].user.ID %>"><%= productos[i].user.Nombre%></a></p>
 								</article>
 							</a>
 						</section>
