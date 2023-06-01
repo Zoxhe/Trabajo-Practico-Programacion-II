@@ -20,9 +20,9 @@ const userController = require('../controllers/userController')
 /* GET users listing. */
 router.get('/login', userController.login);
 router.get('/profile-edit', userController.profileEdit);
-router.get('/profile', userController.profile);
+router.get('/detalle/:id', userController.profile);
 router.get('/register', userController.register);
-router.get('/busqueda/:q?', userController.busqueda);
+router.get('/busqueda/:qP?', userController.busqueda);
 
 
 router.post('/register',  upload.single('imagenDePerfil'), userController.proceso_registro);

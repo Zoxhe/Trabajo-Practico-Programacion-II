@@ -8,11 +8,11 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="<%= infoUsuario.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+				<img src="<%= infoUsuario.FotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= infoUsuario.nombreDeUsuario %>
+					<h1 class="main-title"><%= infoUsuario.Nombre %>
 						<a href="profile-edit">
 							<i class="fas fa-cog"></i>
 						</a>
@@ -21,9 +21,8 @@
 				</div>
 				<div>
 					<ul class="">
-						<li><%= infoUsuario.email %></li>
-						<li>Productos <%=productos.length %></li>
-						<li>200 seguidores</li>
+						<li><%= infoUsuario.Email %></li>
+						<li>Productos: <%=infoUsuario.product.length %></li>
 						<li>300 comentarios</li><!--¿hay que poner la cantidad de comentarios que tienen entre todas las publis?-->
 					</ul>
 				</div>
@@ -39,23 +38,24 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<% for (let i = 0; i < productos.length; i++) { %>
+			<% for (let i = 0; i < infoUsuario.product.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/productos/detalle/<%= productos[i].id %>"><!--revisar a donde tienen q ir-->
+						<a href="/productos/detalle/<%= infoUsuario.product[i].ID %>">
+
 							<figure class="product-box_image">
-								<img src="<%= productos[i].imagen %>" alt="<%= productos[i].nombreDelProducto %>">
+								<img src="<%= infoUsuario.product[i].Imagen %>" alt="<%= infoUsuario.product[i].NombreDelProducto %>">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= productos[i].nombreDelProducto %></h2>
-								<h3>$<%= productos[i].precio %></h3>
-								<p><%= productos[i].descripcion%></p>
-								<p>Comentarios:<%= productos[i].comentarios.length %></p>
+								<h2><%= infoUsuario.product[i].NombreDelProducto %></h2>
+								<h3>$<%= infoUsuario.product[i].Precio %></h3>
+								<p><%= infoUsuario.product[i].Descripción%></p>
+								<p>Comentarios:<%= //infoUsuario.product[i].comentarios.length %></p>
 							</article>
 						</a>
 					</section>
 				</div>
-			<% } %>
+			<% } %> 
 		</div>
 	</div>
 	<!-- /Mis productos -->

@@ -31,9 +31,7 @@ const productController = {
                         {NombreDelProducto:{[op.like]: "%"+nombreProducto +"%"}},
                         {Descripción:{[op.like]: "%"+nombreProducto +"%"}}
                     ]},
-                order:[
-                    ['ID','DESC']
-                ],
+                order:[['FechaDeCarga','DESC']],
                 include: [{association: "user"}]
             })
             .then(function (result) {
@@ -43,7 +41,7 @@ const productController = {
                 console.log(err);
       
             });
-        } 
+    }
   }; 
   
 module.exports = productController;

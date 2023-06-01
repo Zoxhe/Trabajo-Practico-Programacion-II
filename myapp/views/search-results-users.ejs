@@ -13,7 +13,7 @@
 			</div>
 			<!-- muestra los resultados -->
 			
-				<% for (let i = 0; i < productos.length; i++) { %>
+				<% for (let i = 0; i < personas.length; i++) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
 							<a href="/users/detalle/<%= personas[i].ID %>">
@@ -21,21 +21,18 @@
 									<img src="<%= personas[i].FotoDePerfil %>" alt="<%= personas[i].Nombre %>">
 								</figure>
 								<article class="product-box_data">
-									<h2><%= productos[i].Mail %></h2>
-									<h2><%= productos[i].Nombre %></h2>
-									<p><a href="/users/detalle/<%= personas[i].ID %>"><%= productos[i].Nombre%></a></p>
+									<h2><%= personas[i].Nombre %></h2>
+									<p>Email:<%= personas[i].Email %> - Productos:<%= personas[i].product.length %></p>	
 								</article>
 							</a>
 						</section>
 					</div>
 				<% } %>
-				<% if (productos== 0) { %>
+				<% if (personas== 0) { %>
 
 					<div class="noHayResultados">
-						<h2>Oops.. No hay ningun auto que coincida con tu busqueda</h2>
+						<h2>Oops.. No hay ningun usuario que coincida con tu busqueda</h2>
 					</div>
-
-					
 				<% } %>
 				 
         </div>

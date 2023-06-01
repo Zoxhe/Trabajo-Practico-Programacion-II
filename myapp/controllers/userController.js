@@ -59,7 +59,7 @@ const userController={
     busqueda:(req,res)=>{
         let nombrePersona=req.query.qP;
         const op=db.Sequelize.Op;
-            productos.findAll({
+            usuarios.findAll({
                 where:
                     {[op.or]:[
                         {Nombre:{[op.like]: "%"+nombrePersona +"%"}},
@@ -68,6 +68,7 @@ const userController={
                 order:[
                     ['ID','DESC']
                 ],
+                include: [{association: "product"}]
             })
             .then(function (result) {
                 return res.render('search-results-users', { personas: result });  
@@ -76,12 +77,23 @@ const userController={
                 console.log(err);
       
             });
-        },
-    profile:function(req, res) {
-        res.render('profile', {
-            infoUsuario:usuarios.usuario,
-            productos:usuarios.productos
+    },
+    profile:(req, res)=> {
+        let id = req.params.id;
+        let relacion={
+            include: [{association: "product"}],
+            
+        }
+        usuarios.findByPk(id,relacion)
+        .then(function (result) {
+            console.log(result);
+            return res.render('profile', { infoUsuario: result });  
         })
+        .catch(function (err){
+            console.log(err);
+      
+        });  
+  
     },
     profileEdit:function(req, res) {
         res.render('profile-edit', { //Express utiliza el método .render() para enviar la vista al navegador. Se encarga de procesar el archivo EJS y enviar el HTML resultante al navegador.

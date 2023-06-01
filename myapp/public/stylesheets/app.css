@@ -36,7 +36,7 @@
 }
 ::-webkit-scrollbar-thumb{
   border-radius: 10px;
-  background-color: #F433AB;
+  background-color: #D90754;
 }
 
 /*====== Basics ======*/
@@ -126,7 +126,7 @@ hr {
 
 .botones{
   position: absolute;
-  margin-left: 80%;
+  margin-left: 90%;
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
@@ -137,6 +137,7 @@ hr {
 .search-form_button {
   right: 2px;
   height: 60%;
+  width: 65px;
   background-color:#ffffff;
   border: none;
   border-left: solid 1px var(--violeta);
