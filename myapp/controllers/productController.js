@@ -41,6 +41,18 @@ const productController = {
                 console.log(err);
       
             });
+    },
+    mostrarFormAgregar:(req, res)=>{
+        res.render('product-add')
+    },
+    agregar:(req, res)=>{//creo que deberia redirigir al perfil del usuario PREGUNTAR
+        let info= req.body;
+        productos.create(info)
+        .then((result)=>{
+            return res.redirect('/');
+        }).catch((error)=>{
+            console.log(error);
+        });
     }
   }; 
   
