@@ -9,7 +9,7 @@ const productos = db.product; //Alias del modelo
 const productController = {
     findAll: (req, res) => {
       productos.findAll({
-        include: [{association: "user"}],
+        include: [{association: "user"},{association: "comentarios"}],
         order: [
             ['createdAt', 'DESC']
         ]

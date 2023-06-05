@@ -17,13 +17,12 @@
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
-					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+					<a class="btn mt-3 ml-4" href="">SEGUIR</a><!--es de las electivas, nosotras no elegimos esto-->
 				</div>
 				<div>
 					<ul class="">
 						<li><%= infoUsuario.Email %></li>
 						<li>Productos: <%=infoUsuario.product.length %></li>
-						<li>300 comentarios</li><!--¿hay que poner la cantidad de comentarios que tienen entre todas las publis?-->
 					</ul>
 				</div>
 			</div>
@@ -50,7 +49,7 @@
 								<h2><%= infoUsuario.product[i].NombreDelProducto %></h2>
 								<h3>$<%= infoUsuario.product[i].Precio %></h3>
 								<p><%= infoUsuario.product[i].Descripción%></p>
-								<p>Comentarios:<%= //infoUsuario.product[i].comentarios.length %></p>
+								<p>Comentarios:<%= infoUsuario.product[i].comentarios.length %></p>
 							</article>
 						</a>
 					</section>

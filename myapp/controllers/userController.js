@@ -81,7 +81,7 @@ const userController={
     profile:(req, res)=> {
         let id = req.params.id;
         let relacion={
-            include: [{association: "product"}],
+            include: [{association: "product",include:[{association:"comentarios"}]}],
             
         }
         usuarios.findByPk(id,relacion)//se hace con el login, tengo que hacer un where si o si, esto no va a traer

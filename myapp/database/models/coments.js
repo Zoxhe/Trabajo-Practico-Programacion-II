@@ -1,8 +1,7 @@
-/* Es una funcion que recibe 2 parametros */
 module.exports = function(sequelize, dataTypes) {
 
     /* Crear 3 variables */
-    let alias = "product"; /* Un apodo para requerirlo en los controllers */
+    let alias = "comentarios"; /* Un apodo para requerirlo en los controllers */
 
     /* mapeo exacto de cada una de las columnas */
     let cols = {
@@ -11,23 +10,14 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        NombreDelProducto:{
-            type: dataTypes.STRING
-        },
         IDUser:{
             type: dataTypes.INTEGER
         },
-        Descripción:{
-            type: dataTypes.STRING
-        },
-        Imagen:{
-            type: dataTypes.STRING
-        },
-        Precio:{
+        IDproduct:{
             type: dataTypes.INTEGER
         },
-        FechaDeCarga:{
-            type: dataTypes.DATE
+        Comentario:{
+            type: dataTypes.STRING
         },
         createdAt:{
             type: dataTypes.DATE
@@ -39,24 +29,20 @@ module.exports = function(sequelize, dataTypes) {
 
     /* Obj literal paa configurar la tabla */
     let config = {
-        tableName: 'productos',
+        tableName: 'comentarios',
         timestamps: true, //Si la tabla no tiene los campos created_at y updated_at
         underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
 
-    const productos = sequelize.define(alias, cols, config);
+    const coments = sequelize.define(alias, cols, config);
 
-    productos.associate = function(models) {
-        productos.belongsTo(models.user, {
-            as: "user",
-            foreignKey: "IDUser"
-        }),
-        productos.hasMany(models.comentarios, {
-            as: "comentarios",
+    coments.associate = function(models) {
+        coments.belongsTo(models.product, {
+            as: "product",
             foreignKey: "IDproduct"
         })
-    };
+    }
 
 
-    return productos;
+    return coments;
 };

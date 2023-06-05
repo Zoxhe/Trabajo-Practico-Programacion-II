@@ -20,36 +20,6 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<% for (let i = 0; i < autos.length; i++) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="productos/detalle/<%= autos[i].ID %>">
-							<figure class="product-box_image">
-								<img src="<%= autos[i].Imagen %>" alt="<%= autos[i].NombreDelProducto %>">
-							</figure>
-							
-							<article class="product-box_data">
-								<h2><%= autos[i].NombreDelProducto %></h2>
-								<h3>$<%= autos[i].Precio %></h3>
-								<p><%= autos[i].Descripción %> - Fecha de Carga: <%= autos[i].FechaDeCarga %></p>
-								<a href="/users/detalle/<%= autos[i].user.ID %>"><%= autos[i].user.Nombre%></a></p>
-								<!-- 
-									<p>Comentarios:<%= //autos[i].Comentarios.length %></p>
-								 -->
-							</article>
-						</a>
-					</section>
-				</div>
-			<% } %>
-			
-		</div>
-	</div>
-	<!-- /Novedades -->
-	<!-- Más comentados -->
-	<div class="container products-wrapper">
-		<h2 class="products-title">Más comentados</h2>
-		<div class="row">
-				
-				<% for (let i = 0; i < autos.length; i++) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
 							<a href="productos/detalle/<%= autos[i].ID %>">
@@ -61,11 +31,42 @@
 									<h2><%= autos[i].NombreDelProducto %></h2>
 									<h3>$<%= autos[i].Precio %></h3>
 									<p><%= autos[i].Descripción %> - Fecha de Carga: <%= autos[i].FechaDeCarga %></p>
-									<!--<p>Comentarios: <%= //autos[i].Comentarios.length %></p>-->
+									<P><a href="/users/detalle/<%= autos[i].user.ID %>"><%=autos[i].user.Nombre%></a></p>
+									<p>Comentarios:<%= autos[i].comentarios.length %></p>
+									 
 								</article>
 							</a>
 						</section>
 					</div>
+			<% } %>
+			
+		</div>
+	</div>
+	<!-- /Novedades -->
+	<!-- Más comentados -->
+	<div class="container products-wrapper">
+		<h2 class="products-title">Más comentados</h2>
+		<div class="row">
+				
+				<% for (let i = 0; i < autos.length; i++) { %>
+					<% if (autos[i].comentarios.length > 5) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="productos/detalle/<%= autos[i].ID %>">
+								<figure class="product-box_image">
+									<img src="<%= autos[i].Imagen %>" alt="<%= autos[i].NombreDelProducto %>">
+								</figure>
+								
+								<article class="product-box_data">
+									<h2><%= autos[i].NombreDelProducto %></h2>
+									<h3>$<%= autos[i].Precio %></h3>
+									<p><%= autos[i].Descripción %> - Fecha de Carga: <%= autos[i].FechaDeCarga %></p>
+									<p>Comentarios: <%= autos[i].comentarios.length %></p>
+								</article>
+							</a>
+						</section>
+					</div>
+					<% } %>
 				<% } %>
 			
 		</div>
