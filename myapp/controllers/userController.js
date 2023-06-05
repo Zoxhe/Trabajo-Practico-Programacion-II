@@ -84,7 +84,7 @@ const userController={
             include: [{association: "product"}],
             
         }
-        usuarios.findByPk(id,relacion)
+        usuarios.findByPk(id,relacion)//se hace con el login, tengo que hacer un where si o si, esto no va a traer
         .then(function (result) {
             console.log(result);
             return res.render('profile', { infoUsuario: result });  
