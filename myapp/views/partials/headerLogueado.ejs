@@ -13,6 +13,12 @@
                     <input type="text" name="q" placeholder="Buscar productos, marcas y más" class="search-form_input">
                     <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
                 </form>
+                <form action="/users/busqueda/" method="GET" class="search-form" id="formulario">
+                    <input type="text" name="qP" placeholder="Busca usuarios" class="search-form_input">
+                    <div class="botones">
+                        <button type="submit" id="buscarUsuario" class="search-form_button">Usuarios</i></button>
+                    </div>
+                </form>
             </div>
 
             <div class="col-12 col-md-4">
@@ -34,8 +40,8 @@
             </ul>
 
             <ul class="right-navbar">
-                <li><a href="/users/profile">
-                       <%= infoUsuario.nombreDeUsuario %><i class="fas fa-user"></i>
+                <li><a href="/users/detalle/ <%= locals.usuarioLogueado.ID %>" >
+                       <%= locals.usuarioLogueado.Nombre %><i class="fas fa-user"></i>
                     </a>
                 </li>
                 <li>

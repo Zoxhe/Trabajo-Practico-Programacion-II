@@ -6,7 +6,7 @@
 <body>
 	
 	<% if (locals.usuarioLogueado!= undefined) { %>
-		<%- include('./partials/headerDeslogueado') %>
+		<%- include('./partials/headerLogueado') %>
     <% } else { %>
         <%- include('./partials/headerDeslogueado') %>
   <% } %> 
@@ -35,7 +35,7 @@
 									<h2><%= autos[i].NombreDelProducto %></h2>
 									<h3>$<%= autos[i].Precio %></h3>
 									<p><%= autos[i].Descripción %> - Fecha de Carga: <%= autos[i].FechaDeCarga %></p>
-									<P><a href="/users/detalle/<%= autos[i].user.ID %>"><%=autos[i].user.Nombre%></a></p>
+									<!--<P><a href="/users/detalle/<%= //autos[i].user.ID %>"><%=//autos[i].user.Nombre%></a></p>-->
 									<p>Comentarios:<%= autos[i].comentarios.length %></p>
 									 
 								</article>
@@ -53,7 +53,7 @@
 		<div class="row">
 				
 				<% for (let i = 0; i < autos.length; i++) { %>
-					<% if (autos[i].comentarios.length > 5) { %>
+					<% if (autos[i].comentarios.length > 4) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
 							<a href="productos/detalle/<%= autos[i].ID %>">

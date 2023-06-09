@@ -79,7 +79,8 @@ const userController={
             });
     },
     profile:(req, res)=> {
-        let id = req.params.id;
+        let id = req.params.id
+           
         let relacion={
             include: [{association: "product",include:[{association:"comentarios"}]}],
             
@@ -187,6 +188,7 @@ const userController={
                 //Si la contraseña es correcta respecto de un usuario determinado entonces ponemos un usuario en sesion
                
                 if (correct_password){
+            
                 
                     req.session.usuarioLogueado = result.dataValues;
                     //Creo las cookies para que recuerde al usuario
