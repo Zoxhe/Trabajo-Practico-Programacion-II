@@ -170,6 +170,44 @@ const userController={
     login:function(req, res) {
         res.render('login')
     },
+    loginPost: function(req, res){
+       
+         //Busco el email y la contraseña correcta para que el user inicie sesion
+        let email_buscado = req.body.email;
+        let contra_buscada = req.body.keyword;
+        let email_correcto= {
+            where: {Email:email_buscado}
+        };
+        usuarios.findOne (email_correcto)
+        
+        .then(function(result){
+            
+            if (result != null){
+                let correct_password= bcrypt.compareSync (contra_buscada, result.Contraseña)
+                //Si la contraseña es correcta respecto de un usuario determinado entonces ponemos un usuario en sesion
+               
+                if (correct_password){
+                
+                    req.session.usuarioLogueado = result.dataValues;
+                    //Creo las cookies para que recuerde al usuario
+                    if(req.body.rememberme != undefined){
+                       res.cookie('userId', result.ID, {maxAge: 1000 * 60 * 15})
+                   }
+                    return res.redirect('/');
+
+                } else {
+                    return res.send ("Contraseña incorrecta, intente de nuevo")
+
+                }
+            
+            }else {
+                return res.send ("Email no registrado")
+            }
+        }).catch(function(error) {
+            console.log(error);
+
+        })
+    },
     // AGREGAR METODO LOGOUT
     logout: function(req, res) {
         if (req.locals.user != undefined) {

@@ -4,8 +4,12 @@
 <!-- Include Head -->
 <%- include('./partials/head') %>
 <body>
-	<%- include('./partials/headerDeslogueado') %>
 	
+	<% if (locals.usuarioLogueado!= undefined) { %>
+		<%- include('./partials/headerDeslogueado') %>
+    <% } else { %>
+        <%- include('./partials/headerDeslogueado') %>
+  <% } %> 
 	<!-- Banner -->
 	<div class="banner">
 		<img src="images/BANNER.png" alt="Banner de ofertas">

@@ -24,7 +24,8 @@ router.get('/detalle/:id', userController.profile);
 router.get('/register', userController.register);
 router.get('/busqueda/:qP?', userController.busqueda);
 
-
+/* POST users listing. */
+router.post('/login', userController.loginPost);
 router.post('/register',  upload.single('imagenDePerfil'), userController.proceso_registro);
 // AGREGAR RUTA LOGOUT
 router.post('/logout', userController.logout);

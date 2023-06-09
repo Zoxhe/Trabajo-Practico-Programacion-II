@@ -24,8 +24,8 @@ app.use(express.static(path.join(__dirname, 'public'))); //esto especifica que p
 
 app.use(session({
   secret: "A completar", // COMPLETAR CON PALABRA SECRETA
-  resave: true,
-  saveUninitialized: false
+  resave: false,
+  saveUninitialized: true
 }))
 
 app.use(function(req, res, next) { // FALTA CHECKEAR
@@ -40,12 +40,12 @@ app.use(function(req, res, next) { // FALTA CHECKEAR
 })
 
 app.use(function(req, res, next){ // FALTA CHECKEAR
-  if (req.cookie.userId != undefined && req.session.usuarioLogueado == undefined) {
+  if (req.cookies.userId != undefined && req.session.usuarioLogueado == undefined) {
     db.user.findByPk(req.cookie.userId)
     .then(function(usuario) {
       usuario.dataValues.password = undefined;
-      req.session.usuarioLogueado = usuario;
-      res.locals.usuarioLogueado = usuario;
+      req.session.usuarioLogueado = usuario,dataValues;
+      res.locals.usuarioLogueado = usuario.dataValues;
     })
     .catch(function(error) {
       console.log(error);
