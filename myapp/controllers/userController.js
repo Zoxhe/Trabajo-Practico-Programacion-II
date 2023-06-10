@@ -83,7 +83,7 @@ const userController={
            
         let relacion={
             include: [{association: "product",include:[{association:"comentarios"}]}],
-            
+            //order: [ ['createdAt', 'DESC']]
         }
         usuarios.findByPk(id,relacion)//se hace con el login, tengo que hacer un where si o si, esto no va a traer
         .then(function (result) {

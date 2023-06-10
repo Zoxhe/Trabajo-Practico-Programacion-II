@@ -10,9 +10,7 @@ const productController = {
     findAll: (req, res) => {
       productos.findAll({
         include: [{association: "user"},{association: "comentarios"}],
-        order: [
-            ['createdAt', 'DESC']
-        ]
+        order: [ ['createdAt', 'DESC']]
       })
       .then(function (result) {
           return res.render('index', { autos: result });  

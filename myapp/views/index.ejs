@@ -28,16 +28,15 @@
 						<section class="product-box">
 							<a href="productos/detalle/<%= autos[i].ID %>">
 								<figure class="product-box_image">
-									<img src="<%= autos[i].Imagen %>" alt="<%= autos[i].NombreDelProducto %>">
+									<img src="<%=autos[i].Imagen %>" alt="<%= autos[i].NombreDelProducto %>">
 								</figure>
 								
 								<article class="product-box_data">
 									<h2><%= autos[i].NombreDelProducto %></h2>
 									<h3>$<%= autos[i].Precio %></h3>
 									<p><%= autos[i].Descripción %> - Fecha de Carga: <%= autos[i].FechaDeCarga %></p>
-									<!--<P><a href="/users/detalle/<%= //autos[i].user.ID %>"><%=//autos[i].user.Nombre%></a></p>-->
+									<!-- <p><a href="/users/detalle/<%= //autos[i].user.ID %>"><%=//autos[i].user.Nombre%></a></p> -->
 									<p>Comentarios:<%= autos[i].comentarios.length %></p>
-									 
 								</article>
 							</a>
 						</section>

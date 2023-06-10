@@ -5,37 +5,59 @@
 	
 	<% if (locals.usuarioLogueado!= undefined) { %>
 		<%- include('./partials/headerLogueado') %>
+		<% if ((locals.usuarioLogueado.ID == infoUsuario.ID)) { %>
+			<section class="info-usuario container products-wrapper">
+				<div class="row">
+					<div class="img-container offset-3 col-2">
+						<img src="../public/images/ <%=locals.usuarioLogueado.FotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+					</div>
+					<div class="data-container col-6">
+						<div class="d-flex align-items-center ">
+							<h1 class="main-title"><%= locals.usuarioLogueado.Nombre %>
+								<a href="profile-edit">
+									<i class="fas fa-cog"></i>
+								</a>
+							</h1>
+							<a class="btn mt-3 ml-4" href="">SEGUIR</a><!--es de las electivas, nosotras no elegimos esto-->
+						</div>
+						<div>
+							<ul class="">
+								<li><%= locals.usuarioLogueado.Email %></li>
+								<!--<li>Productos: <%=//locals.usuarioLogueado.product.length %></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+	
+		<% } else { %>
+			<section class="info-usuario container products-wrapper">
+				<div class="row">
+					<div class="img-container offset-3 col-2">
+						<img src="../public/images/ <%=infoUsuario.FotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+					</div>
+					<div class="data-container col-6">
+						<div class="d-flex align-items-center ">
+							<h1 class="main-title"><%= infoUsuario.Nombre %>
+								<a href="profile-edit">
+									<i class="fas fa-cog"></i>
+								</a>
+							</h1>
+							<a class="btn mt-3 ml-4" href="">SEGUIR</a><!--es de las electivas, nosotras no elegimos esto-->
+						</div>
+						<div>
+							<ul class="">
+								<li><%= infoUsuario.Email %></li>
+								<li>Productos: <%=infoUsuario.product.length %></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+	  <% } %> 
+	  
     <% } else { %>
         <%- include('./partials/headerDeslogueado') %>
-  <% } %> 
-
-	<!-- Datos del usuario -->
-	<% if ((locals.usuarioLogueado.ID == infoUsuario.ID)) { %>
-		<section class="info-usuario container products-wrapper">
-			<div class="row">
-				<div class="img-container offset-3 col-2">
-					<img src="../public/images/ <%=infoUsuario.FotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
-				</div>
-				<div class="data-container col-6">
-					<div class="d-flex align-items-center ">
-						<h1 class="main-title"><%= infoUsuario.Nombre %>
-							<a href="profile-edit">
-								<i class="fas fa-cog"></i>
-							</a>
-						</h1>
-						<a class="btn mt-3 ml-4" href="">SEGUIR</a><!--es de las electivas, nosotras no elegimos esto-->
-					</div>
-					<div>
-						<ul class="">
-							<li><%= infoUsuario.Email %></li>
-							<!--<li>Productos: <%=//locals.usuarioLogueado.product.length %></li>-->
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-
-    <% } else { %>
 		<section class="info-usuario container products-wrapper">
 			<div class="row">
 				<div class="img-container offset-3 col-2">
@@ -60,6 +82,9 @@
 			</div>
 		</section>
   <% } %> 
+
+	<!-- Datos del usuario -->
+	
 			
 	<!-- /Datos del usuario -->
 

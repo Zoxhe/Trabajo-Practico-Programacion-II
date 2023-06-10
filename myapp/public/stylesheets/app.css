@@ -123,15 +123,18 @@ hr {
   height: 40px;
   font-size: 1.5em;
 }
-
+.search-form_input:focus {
+  outline:none;
+}
 .botones{
   position: absolute;
   margin-left: 90%;
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
-  padding: 11px;
-  border-radius: 3px;
+  padding: 10.67px;
+  border: solid 1px var(--violeta);
+  border-radius: 0px 3px 3px 0px;
   border-left: none;
 }
 .search-form_button {
@@ -292,7 +295,7 @@ hr {
 }
 
 .product-box:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.993);
 }
 
 .product-box:hover p {
