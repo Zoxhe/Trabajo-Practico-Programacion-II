@@ -43,9 +43,15 @@ const productController = {
             });
     },
     mostrarFormAgregar:(req, res)=>{
-        res.render('product-add')
+        if(req.session.usuarioLogueado != undefined){
+            res.render('product-add');
+        }else{
+            res.render('login');
+        }
+        
     },
     agregar:(req, res)=>{//creo que deberia redirigir al perfil del usuario PREGUNTAR
+        
         let info= req.body;
         productos.create(info)
         .then((result)=>{
