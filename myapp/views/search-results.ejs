@@ -3,9 +3,13 @@
 <%- include('./partials/head') %>
 
 <body>
-	<%- include('./partials/headerDeslogueado') %>
+	<% if (locals.usuarioLogueado!= undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+    <% } else { %>
+        <%- include('./partials/headerDeslogueado') %>
+  <% } %> 
 
-	<!-- Novedades -->
+	<!-- busqueda -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
@@ -24,7 +28,7 @@
 									<h2><%= productos[i].NombreDelProducto %></h2>
 									<h3>$<%= productos[i].Precio %></h3>
 									<p><%= productos[i].Descripción %> - Fecha de Carga: <%= productos[i].FechaDeCarga %></p>
-									<p><a href="/users/detalle/<%= productos[i].user.ID %>"><%= productos[i].user.Nombre%></a></p>
+									<p><a href="/users/detalle/<%= productos[i].user.Id %>"><%= productos[i].user.Nombre%></a></p>
 								</article>
 							</a>
 						</section>
@@ -35,7 +39,6 @@
 					<div class="noHayResultados">
 						<h2>Oops.. No hay ningun auto que coincida con tu busqueda</h2>
 					</div>
-
 					
 				<% } %>
 				 

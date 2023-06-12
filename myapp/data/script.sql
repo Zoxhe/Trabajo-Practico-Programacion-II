@@ -5,7 +5,7 @@ use data;
 -- CREAR TABLA DE USUARIO
 create table usuarios (
 -- Nombre       	Tipo          Restriccion
-	ID          	int           unsigned primary key auto_increment,
+	Id          	int           unsigned primary key auto_increment,
 	DNI         	int           not null,
     Nombre			varchar (200) not null,
 	Email       	varchar(200)  not null,

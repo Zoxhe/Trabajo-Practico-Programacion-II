@@ -3,7 +3,11 @@
 <%- include('./partials/head') %>
 
 <body>
-	<%- include('./partials/headerDeslogueado') %>
+	<% if (locals.usuarioLogueado!= undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+    <% } else { %>
+        <%- include('./partials/headerDeslogueado') %>
+  <% } %> 
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -16,7 +20,7 @@
 				<% for (let i = 0; i < personas.length; i++) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
-							<a href="/users/detalle/<%= personas[i].ID %>">
+							<a href="/users/detalle/<%= personas[i].Id %>">
 								<figure class="product-box_image">
 									<img src="<%= personas[i].FotoDePerfil %>" alt="<%= personas[i].Nombre %>">
 								</figure>

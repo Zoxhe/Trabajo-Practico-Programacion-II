@@ -6,7 +6,7 @@ module.exports = function(sequelize, dataTypes) {
 
     /* mapeo exacto de cada una de las columnas */
     let cols = {
-        ID:{
+        Id:{
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER

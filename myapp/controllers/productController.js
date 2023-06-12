@@ -13,6 +13,7 @@ const productController = {
         order: [ ['createdAt', 'DESC']]
       })
       .then(function (result) {
+        
           return res.render('index', { autos: result });  
       })
       .catch(function (err){
@@ -29,7 +30,7 @@ const productController = {
                         {NombreDelProducto:{[op.like]: "%"+nombreProducto +"%"}},
                         {Descripción:{[op.like]: "%"+nombreProducto +"%"}}
                     ]},
-                order:[['FechaDeCarga','DESC']],
+                order:[['createdAt','DESC']],
                 include: [{association: "user"}]
             })
             .then(function (result) {

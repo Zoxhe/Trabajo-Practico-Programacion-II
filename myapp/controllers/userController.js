@@ -83,9 +83,9 @@ const userController={
            
         let relacion={
             include: [{association: "product",include:[{association:"comentarios"}]}],
-            //order: [ ['createdAt', 'DESC']]
+            order: [ ['createdAt', 'DESC']]
         }
-        usuarios.findByPk(id,relacion)//se hace con el login, tengo que hacer un where si o si, esto no va a traer
+        usuarios.findByPk(id,relacion)
         .then(function (result) {
             console.log(result);
             return res.render('profile', { infoUsuario: result });  
@@ -149,7 +149,7 @@ const userController={
                             Email: info.email,
                             FechaDeNac: info.fecnac,
                             Contraseña: contrasenia_encriptada,
-                            FotoDePerfil: req.file.filename || 'default-image.png' //Aca va la ruta de la imagen. Por ahora es default.jpg
+                            FotoDePerfil: info.imagenDePerfil || 'default-image.png' //Aca va la ruta de la imagen. Por ahora es default.jpg
                         })
                         .then(function (result) {
                             res.redirect('/users/login')
@@ -193,7 +193,7 @@ const userController={
                     req.session.usuarioLogueado = result.dataValues;
                     //Creo las cookies para que recuerde al usuario
                     if(req.body.rememberme != undefined){
-                       res.cookie('userId', result.ID, {maxAge: 1000 * 60 * 15})
+                       res.cookie('userId', result.ID, {maxAge: 1000 * 60 * 15})//COMO SE CAMBIO EL NOMBRE DEL ID DE USUARIOS POR "Id", capaz que este ID habria que cambiarlo?
                    }
                     return res.redirect('/');
 
