@@ -26,7 +26,7 @@ router.get('/busqueda/:qP?', userController.busqueda);
 
 /* POST users listing. */
 router.post('/login', userController.loginPost);
-router.post('/register',  upload.single('imagenDePerfil'), userController.proceso_registro);
+router.post('/register',  upload.single('imagenDePerfil'), userController.proceso_registro);//ver que onda esto upload.single. ahora usamos links
 // AGREGAR RUTA LOGOUT
 router.post('/logout', userController.logout);
 
