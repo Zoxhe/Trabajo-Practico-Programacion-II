@@ -34,7 +34,7 @@
 								<article class="product-box_data">
 									<h2><%= autos[i].NombreDelProducto %></h2>
 									<h3>$<%= autos[i].Precio %></h3>
-									<p><%= autos[i].Descripción %> - Fecha de Carga: <%= autos[i].FechaDeCarga %></p>
+									<p><%= autos[i].Descripción %></p>
 									<p><a href="/users/detalle/<%= autos[i].user.Id %>"><%=autos[i].user.Nombre%></a></p>
 									<p>Comentarios:<%= autos[i].comentarios.length %></p>
 								</article>

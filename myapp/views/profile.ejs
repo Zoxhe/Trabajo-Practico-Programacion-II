@@ -2,10 +2,11 @@
 <html lang="es">
 <%- include('./partials/head') %>
 <body>
-	
+
+<!-- Datos del usuario -->
 	<% if (locals.usuarioLogueado!= undefined) { %>
 		<%- include('./partials/headerLogueado') %>
-		<% if ((locals.usuarioLogueado.Id == infoUsuario.Id)) { %>
+		<% if ((locals.usuarioLogueado.Id == infoProducto.Id)) { %>
 			<section class="info-usuario container products-wrapper">
 				<div class="row">
 					<div class="img-container offset-3 col-2">
@@ -48,7 +49,7 @@
 						<div>
 							<ul class="">
 								<li><%= infoUsuario.Email %></li>
-								<li>Productos: <%=infoUsuario.product.length %></li>
+								<li>Productos: <%=infoProducto.length %></li>
 							</ul>
 						</div>
 					</div>
@@ -75,7 +76,7 @@
 					<div>
 						<ul class="">
 							<li><%= infoUsuario.Email %></li>
-							<li>Productos: <%=infoUsuario.product.length %></li>
+							<li>Productos: <%=infoProducto.length %></li>
 						</ul>
 					</div>
 				</div>
@@ -83,10 +84,10 @@
 		</section>
   <% } %> 
 
-	<!-- Datos del usuario -->
-	
 			
 	<!-- /Datos del usuario -->
+
+
 
 	<!-- Mis productos -->
 	<div class="container products-wrapper">
@@ -95,20 +96,19 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<% console.log(infoUsuario.product.length) %>
-			<% for (let i = 0; i < infoUsuario.product.length; i++) { %>
+			<% for (let i = 0; i < infoProducto.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/productos/detalle/<%= infoUsuario.product[i].ID %>">
+						<a href="/productos/detalle/<%= infoProducto[i].ID %>">
 
 							<figure class="product-box_image">
-								<img src="<%= infoUsuario.product[i].Imagen %>" alt="<%= infoUsuario.product[i].NombreDelProducto %>">
+								<img src="<%= infoProducto[i].Imagen %>" alt="<%= infoProducto[i].NombreDelProducto %>">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= infoUsuario.product[i].NombreDelProducto %></h2>
-								<h3>$<%= infoUsuario.product[i].Precio %></h3>
-								<p><%= infoUsuario.product[i].Descripción%></p>
-								<p>Comentarios:<%= infoUsuario.product[i].comentarios.length %></p>
+								<h2><%= infoProducto[i].NombreDelProducto %></h2>
+								<h3>$<%= infoProducto[i].Precio %></h3>
+								<p><%= infoProducto[i].Descripción%></p>
+								<!--<p>Comentarios:<%= //infoProducto.product[i].comentarios.length %></p>-->
 							</article>
 						</a>
 					</section>

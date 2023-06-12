@@ -4,6 +4,7 @@ const db = require('../database/models'); //requerimos los modelos.
 const bcrypt = require('bcryptjs'); //requerimos bcryptjs para encriptar las contraseñas.
 //Seleccionamos el modelo sobre el cual queremos aplicar el método findAll(). En este caso: producto
 const usuarios = db.user; //Alias del modelo
+const producto = db.product; 
 
 function validar_email(email) {
     // Debe ser string, contener un @ y un punto.
@@ -54,6 +55,7 @@ function validar_password(password) {
 
     return true;
 }
+//HAY QUE CAMBIAR LO DE ARRIBA
 
 const userController={
     busqueda:(req,res)=>{
@@ -81,9 +83,10 @@ const userController={
     profile:(req, res)=> {
         let id = req.params.id
            
-        let relacion={
+       /*  let relacion={
             include: [{association: "product",include:[{association:"comentarios"}]}],
             order: [ ['createdAt', 'DESC']]
+
         }
         usuarios.findByPk(id,relacion)
         .then(function (result) {
@@ -93,7 +96,24 @@ const userController={
         .catch(function (err){
             console.log(err);
       
-        });  
+        });  */ 
+
+        let relacion={
+            include: [{association: "user"}],
+            where : [{IDUser: id}],
+            order: [ ['createdAt', 'DESC']]
+        }
+        producto.findAll(relacion)
+        .then(function (result) {
+            console.log(result);
+            //res.send(result)
+            return res.render('profile', { infoProducto: result, infoUsuario: result[0].user });  
+        })
+        .catch(function (err){
+            console.log(err);
+      
+        });
+
   
     },
     profileEdit:function(req, res) {
