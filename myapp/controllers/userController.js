@@ -188,7 +188,7 @@ const userController = {
               req.session.usuarioLogueado = result.dataValues;
               //Creo las cookies para que recuerde al usuario
               if (req.body.rememberme != undefined) {
-                res.cookie("userId", result.ID, { maxAge: 1000 * 60 * 15 }); //COMO SE CAMBIO EL NOMBRE DEL ID DE USUARIOS POR "Id", capaz que este ID habria que cambiarlo?
+                res.cookie("userId", result.Id, { maxAge: 1000 * 60 * 15 }); //COMO SE CAMBIO EL NOMBRE DEL ID DE USUARIOS POR "Id", capaz que este ID habria que cambiarlo?
               }
               return res.redirect("/");
             } else {

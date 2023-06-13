@@ -27,6 +27,29 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+//CONFIGURAR COOKIE
+app.use(function(req, res, next) {
+  
+  if (req.cookies.userId != undefined && req.session.usuarioLogueado== undefined) {
+    let idUserCookie = req.cookies.userId;
+    db.user.findByPk(idUserCookie)
+    .then((usuarioLogueado) => {
+
+      req.session.usuarioLogueado = usuarioLogueado.dataValues;
+      res.locals.usuarioLogueado = usuarioLogueado.dataValues;
+
+      return next();
+      
+    }).catch((error) => {
+      console.log(error);
+    });
+
+  } else {
+  
+    return next();
+  }
+});
+
 
 app.use(function(req, res, next) { // FALTA CHECKEAR
   req.cookie = {};
