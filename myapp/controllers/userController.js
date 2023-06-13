@@ -49,17 +49,13 @@ const userController = {
     let relacion = {
       include: [{ association: "user" }],
       where: [{ IDUser: id }],
-      order: [["createdAt", "DESC"]],
-    };
-    producto
-      .findAll(relacion)
+      order: [["createdAt", "DESC"]]
+    }
+    producto.findAll(relacion)
       .then(function (result) {
         console.log(result);
-        //res.send(result)
-        return res.render("profile", {
-          infoProducto: result,
-          infoUsuario: result[0].user,
-        });
+        res.send(result)
+        return res.render("profile", {infoProducto: result,infoUsuario: result[0].user});
       })
       .catch(function (err) {
         console.log(err);
