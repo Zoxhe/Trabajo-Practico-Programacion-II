@@ -54,7 +54,7 @@ const userController = {
     producto.findAll(relacion)
       .then(function (result) {
         console.log(result);
-        res.send(result)
+        //res.send(result)
         return res.render("profile", {infoProducto: result,infoUsuario: result[0].user});
       })
       .catch(function (err) {
