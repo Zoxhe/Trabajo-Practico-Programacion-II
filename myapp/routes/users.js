@@ -9,7 +9,8 @@ const storage = multer.diskStorage({
         return cb(null, 'public/images/users')
     },
     filename: function (req, file, cb) {
-        return cb(null, file.fieldname + '-' + Date.now() + ".png")
+        return cb(null, 'fotoPerfil' + '-' + Date.now() + ".png")
+        // public/images/users/fotoPerfil-1342346212734.png
     }
 })
 
@@ -32,3 +33,4 @@ router.post('/logout', userController.logout);
 
 
 module.exports = router;
+

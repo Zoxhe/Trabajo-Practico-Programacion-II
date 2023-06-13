@@ -18,6 +18,10 @@
 					<label class="form-label"> Contraseña: <input type="password" id="keyword" name="keyword" class="form-input" placeholder="Contraseña"></label>
 					<label class="form-label"> Recordarme: <input type="checkbox" id="rememberme" name="rememberme" class="check" ></label>
 					<input type="submit" class="enviar" name="send">
+					<!-- ****** -->
+					<% if (locals.errors) { %>
+						<p class="error"><%= locals.errors.message %></p>
+					<% } %>
 				</form>
 			</h2>
 

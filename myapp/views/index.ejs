@@ -9,7 +9,7 @@
 		<%- include('./partials/headerLogueado') %>
     <% } else { %>
         <%- include('./partials/headerDeslogueado') %>
-  <% } %> 
+  	<% } %>
 	<!-- Banner -->
 	<div class="banner">
 		<img src="images/BANNER.png" alt="Banner de ofertas">
@@ -23,24 +23,28 @@
 				<h2 class="products-title">Novedades</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% for (let i = 0; i < autos.length; i++) { %>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<section class="product-box">
-							<a href="productos/detalle/<%= autos[i].ID %>">
-								<figure class="product-box_image">
-									<img src="<%=autos[i].Imagen %>" alt="<%= autos[i].NombreDelProducto %>">
-								</figure>
-								
-								<article class="product-box_data">
-									<h2><%= autos[i].NombreDelProducto %></h2>
-									<h3>$<%= autos[i].Precio %></h3>
-									<p><%= autos[i].Descripción %></p>
-									<p><a href="/users/detalle/<%= autos[i].user.Id %>"><%=autos[i].user.Nombre%></a></p>
-									<p>Comentarios:<%= autos[i].comentarios.length %></p>
-								</article>
-							</a>
-						</section>
-					</div>
+			<% if (autos.length === 0) { %>
+				<p class="error">No hay productos para mostrar</p>
+			<% } else{ %>
+				<% for (let i = 0; i < autos.length; i++) { %>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<section class="product-box">
+								<a href="productos/detalle/<%= autos[i].ID %>">
+									<figure class="product-box_image">
+										<img src="<%=autos[i].Imagen %>" alt="<%= autos[i].NombreDelProducto %>">
+									</figure>
+									
+									<article class="product-box_data">
+										<h2><%= autos[i].NombreDelProducto %></h2>
+										<h3>$<%= autos[i].Precio %></h3>
+										<p><%= autos[i].Descripción %></p>
+										<p><a href="/users/detalle/<%= autos[i].user.Id %>"><%=autos[i].user.Nombre%></a></p>
+										<p>Comentarios:<%= autos[i].comentarios.length %></p>
+									</article>
+								</a>
+							</section>
+						</div>
+				<% } %>
 			<% } %>
 			
 		</div>
@@ -51,27 +55,29 @@
 		<h2 class="products-title">Más comentados</h2>
 		<div class="row">
 				
+			<% if (autos.length === 0) { %>
+				<p class="error">No hay productos para mostrar</p>
+			<% } else{ %>
 				<% for (let i = 0; i < autos.length; i++) { %>
-					<% if (autos[i].comentarios.length > 5) { %>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<section class="product-box">
-							<a href="productos/detalle/<%= autos[i].ID %>">
-								<figure class="product-box_image">
-									<img src="<%= autos[i].Imagen %>" alt="<%= autos[i].NombreDelProducto %>">
-								</figure>
-								
-								<article class="product-box_data">
-									<h2><%= autos[i].NombreDelProducto %></h2>
-									<h3>$<%= autos[i].Precio %></h3>
-									<p><%= autos[i].Descripción %> - Fecha de Carga: <%= autos[i].FechaDeCarga %></p>
-									<p><a href="/users/detalle/<%= autos[i].user.Id %>"><%=autos[i].user.Nombre%></a></p>
-									<p>Comentarios: <%= autos[i].comentarios.length %></p>
-								</article>
-							</a>
-						</section>
-					</div>
-					<% } %>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<section class="product-box">
+								<a href="productos/detalle/<%= autos[i].ID %>">
+									<figure class="product-box_image">
+										<img src="<%=autos[i].Imagen %>" alt="<%= autos[i].NombreDelProducto %>">
+									</figure>
+									
+									<article class="product-box_data">
+										<h2><%= autos[i].NombreDelProducto %></h2>
+										<h3>$<%= autos[i].Precio %></h3>
+										<p><%= autos[i].Descripción %></p>
+										<p><a href="/users/detalle/<%= autos[i].user.Id %>"><%=autos[i].user.Nombre%></a></p>
+										<p>Comentarios:<%= autos[i].comentarios.length %></p>
+									</article>
+								</a>
+							</section>
+						</div>
 				<% } %>
+			<% } %>
 			
 		</div>
 	</div>
