@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
   
   if (req.cookies.userId != undefined && req.session.usuarioLogueado== undefined) {
     let idUserCookie = req.cookies.userId;
-    db.user.findByPk(idUserCookie)
+    db.user.findByPk(idUserCookie )
     .then((usuarioLogueado) => {
 
       req.session.usuarioLogueado = usuarioLogueado.dataValues;

@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router(); 
-const productController = require('../controllers/productController')
+const productController = require('../controllers/productController');
+
 
 
 /* GET detalle del producto */
-//router.get('/detalle/:id', productController.detalle);
+router.get('/detalle/:id', productController.detalle);
 
 /* GET Mostrar forms para agregar producto */
 router.get('/agregar', productController.mostrarFormAgregar);
