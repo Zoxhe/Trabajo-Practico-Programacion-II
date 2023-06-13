@@ -19,7 +19,7 @@ create table usuarios (
 );
 create table productos (
 -- Nombre 				Tipo 		  Restricción
-	ID          		int           unsigned primary key auto_increment,
+	Id          		int           unsigned primary key auto_increment,
 	NombreDelProducto   varchar(200)  not null,
 	IDUser				int			  unsigned,
 	Descripción 		varchar(900)  not null,
@@ -34,7 +34,7 @@ create table productos (
 ); 
 create table comentarios (
 -- Nombre 				Tipo 		  Restricción
-	ID		          	int           unsigned primary key auto_increment,
+	Id		          	int           unsigned primary key auto_increment,
 	IDUser			    int			  unsigned,
     IDproduct 			int			  unsigned,
 	Comentario	 		varchar(900)  not null,

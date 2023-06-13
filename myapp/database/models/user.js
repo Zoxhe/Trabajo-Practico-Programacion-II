@@ -29,9 +29,6 @@ module.exports = function(sequelize, dataTypes) {
         FotoDePerfil:{
             type: dataTypes.STRING
         },
-        RecordarContra: {
-            type: dataTypes.STRING
-        },
         createdAt:{
             type: dataTypes.DATE
         },

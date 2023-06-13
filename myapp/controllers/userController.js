@@ -126,7 +126,7 @@ const userController = {
                       Email: info.email,
                       FechaDeNac: info.fecnac,
                       Contraseña: contrasenia_encriptada,
-                      FotoDePerfil: req.file.filename,
+                      FotoDePerfil: req.file.filename
                     })
                     .then(function (result) {
                       res.redirect("/users/login");
