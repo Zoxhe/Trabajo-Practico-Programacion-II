@@ -77,7 +77,51 @@ const productController = {
         }).catch((error)=>{
             console.log(error);
         });
-    }
+    },
+    FormEditar: (req, res) => {
+        if(req.session.usuarioLogueado != undefined){
+            res.render('product-edit');
+        }else{
+            res.render('login');
+        }
+        /*let id = req.params.id;
+        productos
+          .findByPk(id)
+          .then((result) => {
+            console.log(result);
+            return res.render("updateMovie", { productos: result });
+          })
+          .catch((err) => {
+            console.log(err);
+          });*/
+    },
+    EditarProd: (req, res) => {
+        let id = req.params.id;
+        let info = req.body;
+        productos
+          .update(info, {
+            where: [{ ID: id }],
+          })
+          .then((result) => {
+            return res.redirect("/" );
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+    },
+    /*EliminarProd: (req, res) => {
+        let idParaEliminar = req.body.id;
+        movie
+          .destroy({
+            where: [{ id: idParaEliminar }],
+          })
+          .then((result) => {
+            return res.redirect("/movies/all");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },*/
   }; 
   
 module.exports = productController;

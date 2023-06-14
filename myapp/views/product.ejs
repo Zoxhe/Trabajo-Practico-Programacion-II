@@ -10,7 +10,10 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= productos.NombreDelProducto %></h2> 
 			<p class="product-detail-description">
-				<a href="/productos/agregar">Editar</a>
+				<a href=" /users/detalle/<%= productos.user.Id %>" ><%= productos.user.Nombre %></a>
+			</p>
+			<p class="product-detail-description">
+				<a href="/productos/editar/<%= productos.ID %>" >Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -27,10 +30,10 @@
 						<% } else { %>
 							<% for (let i = 0; i < productos.comentarios.length; i++) { %>
 								<article>
-									<img src="<%= productos.user[i].FotoDePerfil %>" alt="">
+									<img src="<%= productos.comentarios[i].user.FotoDePerfil %>" alt="">
 									<div class="data">
 										<p class="user">
-											<strong> <a href="/users/profile">Usuario: <%= productos.user[i].Nombre %></a> </strong>
+											<strong> <a href="/users/profile">Usuario: <%= productos.comentarios[i].user.Nombre %></a> </strong>
 											<%= productos.comentarios[i].Comentario %>
 										</p>
 									</div>

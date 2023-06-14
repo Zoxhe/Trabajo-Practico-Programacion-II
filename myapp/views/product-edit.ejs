@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include('./partials/head') %>
+	
+
+<body>
+	<%- include('./partials/headerLogueado') %>
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Editar producto</h2>
+			</div>
+			<!-- FORMULARIO -->
+			<h2 class="col-12">
+				<form method="POST" action="/productos/editar/<%= productos.ID %> class="cajaformulario" >
+					<label class="form-label"> Nombre del Producto: <input type="text" class="form-input" ></label>
+					<input type="hidden" class="form-input" id="IDUser" name="IDUser" value=<%=locals.usuarioLogueado.Id%>>
+					<label class="form-label"> Foto: <input type="text" class="form-input"  placeholder="https://ejemplo.com/imagen.jpg"></label>
+					<label class="form-label"> Precio: <input type="number" class="form-input" ></label>
+					<label class="form-label"> Descripcion: <input type="text" class="form-input" ></label>
+					<input type="submit" class="enviar">
+				</form>
+
+			</h2>
+        </div>
+    </div>
+	
+
+	<%- include('partials/footer') %>
+</body>
+
+</html>
