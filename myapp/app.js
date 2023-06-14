@@ -51,7 +51,7 @@ app.use(function(req, res, next) {
 });
 
 
-app.use(function(req, res, next) { // FALTA CHECKEAR
+/*app.use(function(req, res, next) { // YA ESTA HECHO MÁS ARRIBA
   req.cookie = {};
   req.cookie.userId = undefined;
   if (req.session.usuarioLogueado != undefined) {
@@ -60,9 +60,9 @@ app.use(function(req, res, next) { // FALTA CHECKEAR
     res.locals.usuarioLogueado = undefined;
   }
   return next();
-})
+})*/
 
-app.use(function(req, res, next){ // FALTA CHECKEAR
+/*app.use(function(req, res, next){ // YA ESTA HECHO MÁS ARRIBA
   if (req.cookies.userId != undefined && req.session.usuarioLogueado == undefined) {
     db.user.findByPk(req.cookie.userId)
     .then(function(usuario) {
@@ -79,7 +79,7 @@ app.use(function(req, res, next){ // FALTA CHECKEAR
 
   return next();
 })
-
+*/
 app.use(function(req, res, next) { // FALTA CHECKEAR
   if (req.session.usuarioLogueado != undefined) {
     res.locals.usuarioLogueado = req.session.usuarioLogueado;

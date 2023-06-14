@@ -23,16 +23,21 @@ const productController = {
       });
     },
     detalle:(req, res) => {
-            let id = req.params.id;
-            productos.findByPk(id)
-            .then(function(result){
-                return res.render ('product',{
-                    productos: result
-                })
+        let id = req.params.id;
+
+        let rel = {
+            include: [{ association: 'user' }, { association: "comentarios" }],
+            };
+        productos.findByPk(id, rel)
+        .then(function(result){
+            console.log(result);
+            return res.render ('product',{
+                productos: result
             })
-            .catch(function(error){
-                console.log(error);
-            });
+        })
+        .catch(function(error){
+            console.log(error);
+        });
     },
     busqueda:(req,res)=>{
         let nombreProducto=req.query.q;

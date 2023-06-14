@@ -22,16 +22,16 @@
 				<!--Nota: anda bien el detalle del producto :), si sacamos la seccion del los comentarios podemos verlo bien-->
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% if (productos.Comentarios.length === 0) { %>
+						<% if (productos.comentarios.length === 0) { %>
 							<p>No hay comentarios</p>
 						<% } else { %>
-							<% for (let i = 0; i < productos.Comentarios.length; i++) { %>
+							<% for (let i = 0; i < productos.comentarios.length; i++) { %>
 								<article>
-									<img src="<%= productos.Comentarios[i].FotoDePerfil %>" alt="">
+									<img src="<%= productos.user[i].FotoDePerfil %>" alt="">
 									<div class="data">
 										<p class="user"><!--fijarse a donde lleva este href-->
-											<strong> <a href="/users/profile">Usuario: <%= productos.Comentarios[i].Nombre %></a> </strong>
-											<%= productos.Comentarios[i].Comentario %>
+											<strong> <a href="/users/profile">Usuario: <%= productos.user[i].Nombre %></a> </strong>
+											<%= productos.comentarios[i].Comentario %>
 										</p>
 									</div>
 								</article>
