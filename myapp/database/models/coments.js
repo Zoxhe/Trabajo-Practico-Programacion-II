@@ -42,7 +42,7 @@ module.exports = function(sequelize, dataTypes) {
             as: "user",
             foreignKey: "IDUser"
         })
-    }
+    };
 
 
     return coments;

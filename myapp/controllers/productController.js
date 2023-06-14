@@ -31,6 +31,7 @@ const productController = {
         productos.findByPk(id, rel)
         .then(function(result){
             console.log(result);
+            //res.send(result);
             return res.render ('product',{
                 productos: result
             })
