@@ -80,7 +80,7 @@ const userController = {
 
   },
   //   *******
-  profileEdit: function (req, res) {
+  profileEdit: function (req, res) {//VER QUE ONDA ESTO, PORQUE NO LLEVA A NINGUN LADO
     if (req.session.usuarioLogueado == undefined) {
         res.redirect("/users/login");
     } else {
@@ -202,7 +202,7 @@ const userController = {
                 req.session.usuarioLogueado = result.dataValues;
                 //Creo las cookies para que recuerde al usuario
                 if (req.body.rememberme != undefined) {
-                  res.cookie("userId", result.Id, { maxAge: 1000 * 60 * 15 }); //COMO SE CAMBIO EL NOMBRE DEL ID DE USUARIOS POR "Id", capaz que este ID habria que cambiarlo?
+                  res.cookie("userId", result.Id, { maxAge: 1000 * 60 * 15 }); 
                 }
                 return res.redirect("/");
             } else {

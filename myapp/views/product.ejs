@@ -3,6 +3,8 @@
 <%- include('./partials/head') %>
 <body>
 	<%- include('./partials/headerDeslogueado') %>
+	<!-- Acordarse de poner header logueado-->
+	
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
@@ -17,6 +19,7 @@
 					<img src="<%= productos.Imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description"><%= productos.Descripción %>- Precio: $<%= productos.Precio %>.</p>
 				</article>
+				<!--Nota: anda bien el detalle del producto :), si sacamos la seccion del los comentarios podemos verlo bien-->
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<% if (productos.Comentarios.length === 0) { %>
