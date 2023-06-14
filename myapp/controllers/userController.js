@@ -191,24 +191,20 @@ const userController = {
       let email_correcto = {
         where: { Email: email_buscado },
       };
-      usuarios
-        .findOne(email_correcto)
+      usuarios.findOne(email_correcto)
 
         .then(function (result) {
           if (result != null) {
-            let correct_password = bcrypt.compareSync(
-              contra_buscada,
-              result.Contraseña
-            );
+            let correct_password = bcrypt.compareSync( contra_buscada,result.Contraseña);
             //Si la contraseña es correcta respecto de un usuario determinado entonces ponemos un usuario en sesion
 
             if (correct_password) {
-              req.session.usuarioLogueado = result.dataValues;
-              //Creo las cookies para que recuerde al usuario
-              if (req.body.rememberme != undefined) {
-                res.cookie("userId", result.ID, { maxAge: 1000 * 60 * 15 }); //COMO SE CAMBIO EL NOMBRE DEL ID DE USUARIOS POR "Id", capaz que este ID habria que cambiarlo?
-              }
-              return res.redirect("/");
+                req.session.usuarioLogueado = result.dataValues;
+                //Creo las cookies para que recuerde al usuario
+                if (req.body.rememberme != undefined) {
+                  res.cookie("userId", result.Id, { maxAge: 1000 * 60 * 15 }); //COMO SE CAMBIO EL NOMBRE DEL ID DE USUARIOS POR "Id", capaz que este ID habria que cambiarlo?
+                }
+                return res.redirect("/");
             } else {
               errors.message = "La contraseña es incorrecta";
               res.locals.errors = errors;

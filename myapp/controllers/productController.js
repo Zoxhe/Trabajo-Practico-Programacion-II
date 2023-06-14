@@ -22,6 +22,18 @@ const productController = {
 
       });
     },
+    detalle:(req, res) => {
+            let id = req.params.id;
+            productos.findByPk(id)
+            .then(function(result){
+                return res.render ('product',{
+                    productos: result
+                })
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+    },
     busqueda:(req,res)=>{
         let nombreProducto=req.query.q;
         const op=db.Sequelize.Op;
