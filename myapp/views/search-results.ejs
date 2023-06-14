@@ -29,6 +29,7 @@
 									<h3>$<%= productos[i].Precio %></h3>
 									<p><%= productos[i].Descripción %> - Fecha de Carga: <%= productos[i].FechaDeCarga %></p>
 									<p><a href="/users/detalle/<%= productos[i].user.Id %>"><%= productos[i].user.Nombre%></a></p>
+									<p>Comentarios:<%= productos[i].comentarios.length %></p>
 								</article>
 							</a>
 						</section>

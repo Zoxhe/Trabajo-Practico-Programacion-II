@@ -10,7 +10,8 @@ const productController = {
     findAll: (req, res) => {
       productos.findAll({
         include: [{association: "user"},{association: "comentarios"}],
-        order: [ ['createdAt', 'DESC']]
+        order: [ ['createdAt', 'DESC']],
+        //limit:10    deberiamos limitar la cantidad de resultados
       })
       .then(function (result) {
         
@@ -31,7 +32,7 @@ const productController = {
                         {Descripción:{[op.like]: "%"+nombreProducto +"%"}}
                     ]},
                 order:[['createdAt','DESC']],
-                include: [{association: "user"}]
+                include: [{association: "user"},{association: "comentarios"}]
             })
             .then(function (result) {
                 return res.render('search-results', { productos: result });  

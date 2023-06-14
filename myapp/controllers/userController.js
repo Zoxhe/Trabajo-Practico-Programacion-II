@@ -51,15 +51,33 @@ const userController = {
       where: [{ IDUser: id }],
       order: [["createdAt", "DESC"]]
     }
-    producto.findAll(relacion)
-      .then(function (result) {
-        console.log(result);
-        //res.send(result)
-        return res.render("profile", {infoProducto: result,infoUsuario: result[0].user});
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
+
+    if(relacion == null ){
+        producto.findAll(relacion)
+        .then(function (result) {
+            console.log(result);
+            res.send("resultado"+result)
+            return res.render("profile", {infoProducto: result,infoUsuario: result[0].user});
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+    }else{//si el usuario no tiene ningun producto cargado solo le aparecera sus datos
+        rel={
+            include: [{association: "product"}]
+        }
+        usuarios.findByPk(id,rel)
+         .then(function (result) {
+            //res.send(result)
+             console.log(result);
+             return res.render('profile', { infoUsuario: result,infoProducto: result.product });  
+         })
+         .catch(function (err){
+             console.log(err);
+       
+         });
+    }
+
   },
   //   *******
   profileEdit: function (req, res) {
@@ -126,7 +144,7 @@ const userController = {
                       Email: info.email,
                       FechaDeNac: info.fecnac,
                       Contraseña: contrasenia_encriptada,
-                      FotoDePerfil: req.file.filename,
+                      FotoDePerfil: info.imagenDePerfil
                     })
                     .then(function (result) {
                       res.redirect("/users/login");
