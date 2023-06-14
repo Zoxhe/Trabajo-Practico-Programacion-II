@@ -41,7 +41,12 @@ module.exports = function(sequelize, dataTypes) {
         coments.belongsTo(models.user, {//es de preuva, acordarse de sacarlo
             as: "user",
             foreignKey: "IDUser"
+        }),
+        coments.belongsTo(models.product, {//es de preuva, acordarse de sacarlo
+            as: "product",
+            foreignKey: "IDproduct"
         })
+
     };
 
 
