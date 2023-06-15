@@ -84,16 +84,16 @@ const productController = {
         }else{
             res.render('login');
         }
-        /*let id = req.params.id;
+        let id = req.params.id;
         productos
           .findByPk(id)
           .then((result) => {
             console.log(result);
-            return res.render("updateMovie", { productos: result });
+            return res.render("product-edit", { productos: result });
           })
           .catch((err) => {
             console.log(err);
-          });*/
+          });
     },
     EditarProd: (req, res) => {
         let id = req.params.id;
@@ -103,12 +103,27 @@ const productController = {
             where: [{ ID: id }],
           })
           .then((result) => {
-            return res.redirect("/" );
+            res.send(result);
+            return res.redirect("/productos/editar/" + id );
           })
           .catch((err) => {
             console.log(err);
           });
     },
+    /*update: (req, res) => {
+        let id = req.params.id;
+        let info = req.body;
+        movie
+          .update(info, {
+            where: [{ id: id }],
+          })
+          .then((result) => {
+            return res.redirect("/movies/id/" + id);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },*/
     /*EliminarProd: (req, res) => {
         let idParaEliminar = req.body.id;
         movie
