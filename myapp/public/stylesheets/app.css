@@ -134,7 +134,7 @@ hr {
   background-color: #ffffff;
   padding: 10.67px;
   border: solid 1px var(--violeta);
-  border-radius: 0px 3px 3px 0px;
+  border-radius: 3px;
   border-left: none;
 }
 .search-form_button {
@@ -146,9 +146,14 @@ hr {
   border-left: solid 1px var(--violeta);
   color: var(--gray);
   cursor: pointer;
+  font-family: var(--letraenuso);
 }
 
-
+.error-formulario{
+  font-family: var(--letraenuso) ;
+  color: #D90754;
+  font-size: 150%;
+}
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
@@ -315,18 +320,18 @@ hr {
 }
 
 .footer-data i {
-  color:#D90754;
+  color:#292729;
   font-size: 3.5em;
 }
 
 .footer-data h2 {/*info de footer*/
-  color:#D90754 ;
+  color:#4e4b4c ;
   font-size: 2.4em;
   font-weight: 400;
 }
 
 .footer-data p {
-  color:#D90754 ;
+  color:#7e7b7c ;
   font-size: 1.5em;
 /* /public podremos guardar todos los recursos estáticos de nuestra aplicación. */
 
@@ -418,7 +423,7 @@ hr {
 }
 
 .buy-now-button {
-  background-color: var(--light-blue);
+  background-color: var(--gray);
   font-size: 1.6em;
   color: #ffffff;
   padding: 15px;
@@ -482,11 +487,12 @@ hr {
 	max-width: 525px;
   background-color: #5D91A6;
   box-shadow: 0px 0px 60px 0px rgba(5, 5, 5, 0.253);
+  border-radius: 2%
 }
 
 .form-label {
   display: inline-block;
-  font-size: 1.6em;
+  font-size: 1.3em;
   margin: 10px 0;
   width: 100%;
 }
@@ -504,8 +510,8 @@ hr {
 }
 
 .error{
-  color: rgb(209, 0, 0);
-  font-size: 1.4em;
+  color: rgb(199, 10, 10);
+  font-size: 1.3em;
 }
 
 textarea.form-input {
