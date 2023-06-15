@@ -2,8 +2,12 @@
 <html lang="es">
 <%- include('./partials/head') %>
 <body>
-	<%- include('./partials/headerDeslogueado') %>
-	<!-- Acordarse de poner header logueado-->
+	<% if (locals.usuarioLogueado!= undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+        <%- include('./partials/headerDeslogueado') %>
+  <% } %> 
+	
 	
 	<!-- product detail -->
 	<div class="container products-wrapper">
@@ -12,9 +16,11 @@
 			<p class="product-detail-description">
 				<a href=" /users/detalle/<%= productos.user.Id %>" ><%= productos.user.Nombre %></a>
 			</p>
-			<p class="product-detail-description">
-				<a href="/productos/editar/<%= productos.ID %>" >Editar</a>
-			</p>
+			<% //if (locals.usuarioLogueado==productos.user.id) { %>
+				<p class="product-detail-description">
+					<a href="/productos/editar/<%= productos.ID %>" >Editar</a>
+				</p>
+			<% //} %>
 		</div>
 		<div class="product-detail">
 			<div class="row">

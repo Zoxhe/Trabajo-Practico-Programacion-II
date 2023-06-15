@@ -79,6 +79,23 @@ const productController = {
         });
     },
     FormEditar: (req, res) => {
+        /*let id = req.params.id;
+        productos
+            .findByPk(id)
+
+            .then((result) => {
+            console.log(result);
+            //res.send(result)
+            if (req.session.usuarioLogueado ==result.IDUser) {
+                return res.render("product-edit", { productos: result });
+            }else{
+                res.render('login');
+            }
+            })
+            .catch((err) => {
+            console.log(err);
+            });*/
+        
         if(req.session.usuarioLogueado != undefined){
             res.render('product-edit');
         }else{
@@ -86,14 +103,15 @@ const productController = {
         }
         let id = req.params.id;
         productos
-          .findByPk(id)
-          .then((result) => {
+            .findByPk(id)
+            .then((result) => {
             console.log(result);
             return res.render("product-edit", { productos: result });
-          })
-          .catch((err) => {
+            })
+            .catch((err) => {
             console.log(err);
-          });
+            });
+        
     },
     EditarProd: (req, res) => {
         let id = req.params.id;
