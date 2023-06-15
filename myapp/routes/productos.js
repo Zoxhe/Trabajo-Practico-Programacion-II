@@ -19,6 +19,9 @@ router.get('/editar/:id', productController.FormEditar);
 /* POST editar producto */
 router.post('/editar/:id', productController.EditarProd);
 
+/* POST editar producto */
+router.post('/eliminar', productController.EliminarProd);
+
 // /* GET resultados de busqueda */
 router.get('/busqueda/:q?', productController.busqueda); // rutas parametrizadas: Usando la misma estructura básica para definir una ruta aclaramos en el path cuál es el parámetro que va a ir variando haciendo uso de los dos puntos seguido del nombre que represente al dato que estará llegando en la url.
 

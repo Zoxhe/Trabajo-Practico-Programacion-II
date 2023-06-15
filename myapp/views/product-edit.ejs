@@ -13,12 +13,11 @@
 			</div>
 			<!-- FORMULARIO -->
 			<h2 class="col-12">
-				<form class="cajaformulario" action="/productos/editar/<%=productos.ID%>" method="POST" >
-					<label class="form-label"> Nombre del Producto: <input type="text" class="form-input" ></label>
-					<input type="hidden" class="form-input" id="IDUser" name="IDUser" value=<%=locals.usuarioLogueado.Id%>>
-					<label class="form-label"> Foto: <input type="text" class="form-input"  placeholder="https://ejemplo.com/imagen.jpg"></label>
-					<label class="form-label"> Precio: <input type="number" class="form-input" ></label>
-					<label class="form-label"> Descripcion: <input type="text" class="form-input" ></label>
+				<form class="cajaformulario" action="/productos/editar/<%= productos.ID %>" method="POST" >
+					<label class="form-label"> Nombre del Producto: <input type="text" class="form-input" value="<%= productos.NombreDelProducto %>" name="NombreDelProducto" ></label>
+					<label class="form-label"> Foto: <input type="text" class="form-input" value="<%= productos.Imagen %>" name="Imagen" placeholder="https://ejemplo.com/imagen.jpg"></label>
+					<label class="form-label"> Precio: <input type="number" class="form-input" value="<%= productos.Precio %>" name="Precio" ></label>
+					<label class="form-label"> Descripcion: <input type="text" class="form-input" value="<%= productos.Descripción %>" name="Descripción"></label>
 					<input type="submit" class="enviar">
 				</form>
 			</h2>

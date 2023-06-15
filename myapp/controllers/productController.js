@@ -5,7 +5,6 @@ const { or } = require('sequelize');
 const db = require('../database/models'); //requerimos los modelos.
 //Seleccionamos el modelo sobre el cual queremos aplicar el método findAll(). En este caso: producto
 const productos = db.product; //Alias del modelo
-
 const productController = {
     findAll: (req, res) => {
       productos.findAll({
@@ -79,55 +78,49 @@ const productController = {
         });
     },
     FormEditar: (req, res) => {
-        /*let id = req.params.id;
-        productos
-            .findByPk(id)
-
-            .then((result) => {
-            console.log(result);
-            //res.send(result)
-            if (req.session.usuarioLogueado ==result.IDUser) {
-                return res.render("product-edit", { productos: result });
-            }else{
-                res.render('login');
-            }
-            })
-            .catch((err) => {
-            console.log(err);
-            });*/
-        
-        if(req.session.usuarioLogueado != undefined){
-            res.render('product-edit');
-        }else{
-            res.render('login');
-        }
         let id = req.params.id;
-        productos
-            .findByPk(id)
-            .then((result) => {
+        productos.findByPk(id)
+        .then((result) => {
             console.log(result);
-            return res.render("product-edit", { productos: result });
-            })
-            .catch((err) => {
-            console.log(err);
-            });
+            if(req.session.usuarioLogueado.Id==result.IDUser){
+            return res.render("product-edit", { productos: result })
+        }
+        })
+        .catch((err) => {
+        console.log(err);
+        });
+
         
     },
     EditarProd: (req, res) => {
         let id = req.params.id;
-        let info = req.body;
-        productos
-          .update(info, {
-            where: [{ ID: id }],
-          })
-          .then((result) => {
-            res.send(result);
-            return res.redirect("/productos/editar/" + id );
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        let info = req.body; //Guardo la info del formulario de editar
+        console.log(info);
+        //La funcion update recibe dos parametros: lo que quiero actualiza (info) y el otro un objeto literal
+        productos.update(info,{
+            where:[
+                {ID:id}//El primer id es una propiedad de la base de datos y el segundo es la varibale que definimos antes
+            ]
+        }).then((result) => {
+            return res.redirect("/productos/detalle/" + id );
+        }).catch((error) => {
+            console.log(error);
+        })
     },
+    EliminarProd: (req,res)=> {
+        let id= req.body.id
+        //Utilizo el método destroy
+        productos.destroy({
+            where: [
+                {ID:id}
+            ]
+        }).then((result) => {
+            return res.redirect('/')
+        }).catch((error) => {
+            console.log(error);
+        })
+        
+    }
     
   }; 
   

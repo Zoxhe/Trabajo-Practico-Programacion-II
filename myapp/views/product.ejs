@@ -16,11 +16,44 @@
 			<p class="product-detail-description">
 				<a href=" /users/detalle/<%= productos.user.Id %>" ><%= productos.user.Nombre %></a>
 			</p>
-			<% //if (locals.usuarioLogueado==productos.user.id) { %>
-				<p class="product-detail-description">
-					<a href="/productos/editar/<%= productos.ID %>" >Editar</a>
+			<% if (locals.usuarioLogueado!= undefined) { %>
+				<% if (locals.usuarioLogueado.Id==productos.user.Id) { %>
+					<p class="product-detail-description"> 
+						<a href="/productos/editar/<%= productos.ID %>" >Editar</a>
+					</p>
+				<% } else { %>
+					<p class="product-detail-description" style="display: none;" >
+						Como no es dueño de esta publicación no puede editar
+					</p>
+				<% } %>
+			<% } else { %>
+				<p class="product-detail-description" style="display: none;"> 
+					Para editar primero debe iniciar sesión  
 				</p>
-			<% //} %>
+		  <% } %> 
+		  <% if (locals.usuarioLogueado!= undefined) { %>
+			<% if (locals.usuarioLogueado.Id==productos.user.Id) { %>
+				<form action="/productos/eliminar" method="POST">
+					<p class="product-detail-description">
+						<input type="text" hidden name="id" id="" value="<%= productos.ID %>">
+						<input value="Eliminar" class="" type="submit">
+					</p>
+					
+				</form>
+			<% } else { %>
+				<p class="product-detail-description" style="display: none;" >
+					Como no es dueño de esta publicación no puede editar
+				</p>
+			<% } %>
+		<% } else { %>
+			<p class="product-detail-description" style="display: none;"> 
+				Para eliminar primero debe iniciar sesión  
+			</p>
+	  <% } %> 
+		  
+			
+			
+				
 		</div>
 		<div class="product-detail">
 			<div class="row">
