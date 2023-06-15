@@ -79,16 +79,18 @@ const productController = {
         });
     },
     FormEditar: (req, res) => {
-        if(req.session.usuarioLogueado != undefined){
+       /* if(req.session.usuarioLogueado != undefined){
             res.render('product-edit');
         }else{
             res.render('login');
-        }
+        }BORRAR*/
+
         let id = req.params.id;
         productos
           .findByPk(id)
           .then((result) => {
             console.log(result);
+            //res.send(result)
             return res.render("product-edit", { productos: result });
           })
           .catch((err) => {

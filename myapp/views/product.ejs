@@ -2,8 +2,12 @@
 <html lang="es">
 <%- include('./partials/head') %>
 <body>
-	<%- include('./partials/headerDeslogueado') %>
-	<!-- Acordarse de poner header logueado-->
+	<% if (locals.usuarioLogueado!= undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+        <%- include('./partials/headerDeslogueado') %>
+  <% } %> 
+	
 	
 	<!-- product detail -->
 	<div class="container products-wrapper">
@@ -12,9 +16,12 @@
 			<p class="product-detail-description">
 				<a href=" /users/detalle/<%= productos.user.Id %>" ><%= productos.user.Nombre %></a>
 			</p>
+			<!--ACA DEBERIA IR EL IF PREGUNTANDO SI EL ID DEL USUARIO LOGUEADO ES EL MISMO QUE EL USUARIO SUBIO LA PUBLICACION-->
+			<!-- SI ES ASI, QUE SE MUESTRE EL BOTON DE EDITAR-->
 			<p class="product-detail-description">
 				<a href="/productos/editar/<%= productos.ID %>" >Editar</a>
 			</p>
+			<!--CIERRO IF-->
 		</div>
 		<div class="product-detail">
 			<div class="row">
