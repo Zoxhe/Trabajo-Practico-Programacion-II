@@ -16,12 +16,11 @@
 			<p class="product-detail-description">
 				<a href=" /users/detalle/<%= productos.user.Id %>" ><%= productos.user.Nombre %></a>
 			</p>
-			<!--ACA DEBERIA IR EL IF PREGUNTANDO SI EL ID DEL USUARIO LOGUEADO ES EL MISMO QUE EL USUARIO SUBIO LA PUBLICACION-->
-			<!-- SI ES ASI, QUE SE MUESTRE EL BOTON DE EDITAR-->
-			<p class="product-detail-description">
-				<a href="/productos/editar/<%= productos.ID %>" >Editar</a>
-			</p>
-			<!--CIERRO IF-->
+			<% //if (locals.usuarioLogueado==productos.user.id) { %>
+				<p class="product-detail-description">
+					<a href="/productos/editar/<%= productos.ID %>" >Editar</a>
+				</p>
+			<% //} %>
 		</div>
 		<div class="product-detail">
 			<div class="row">
