@@ -110,33 +110,7 @@ const productController = {
             console.log(err);
           });
     },
-    /*update: (req, res) => {
-        let id = req.params.id;
-        let info = req.body;
-        movie
-          .update(info, {
-            where: [{ id: id }],
-          })
-          .then((result) => {
-            return res.redirect("/movies/id/" + id);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      },*/
-    /*EliminarProd: (req, res) => {
-        let idParaEliminar = req.body.id;
-        movie
-          .destroy({
-            where: [{ id: idParaEliminar }],
-          })
-          .then((result) => {
-            return res.redirect("/movies/all");
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      },*/
+    
   }; 
   
 module.exports = productController;
