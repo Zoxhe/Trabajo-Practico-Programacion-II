@@ -132,9 +132,9 @@ hr {
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
-  padding: 10.67px;
+  padding: 9.34px;
   border: solid 1px var(--violeta);
-  border-radius: 3px;
+  border-radius: 0px 3px 3px 0px;
   border-left: none;
 }
 .search-form_button {
