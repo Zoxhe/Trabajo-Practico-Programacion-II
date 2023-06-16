@@ -6,7 +6,7 @@
 <!-- Datos del usuario -->
 	<% if (locals.usuarioLogueado!= undefined) { %>
 		<%- include('./partials/headerLogueado') %>
-		<% if ((locals.usuarioLogueado.Id == infoUsuario.Id)) { %>
+		<% if ((locals.usuarioLogueado.Id == infoUsuario.Id)) { %><!--si esta logueado y el perfil es suyo-->
 			<section class="info-usuario container products-wrapper">
 				<div class="row">
 					<div class="img-container offset-3 col-2">
@@ -14,24 +14,19 @@
 					</div>
 					<div class="data-container col-6">
 						<div class="d-flex align-items-center ">
-							<h1 class="main-title"><%= locals.usuarioLogueado.Nombre %>
-								<a href="profile-edit">
-									<i class="fas fa-cog"></i>
-								</a>
-							</h1>
-							<a class="btn mt-3 ml-4" href="">SEGUIR</a><!--es de las electivas, nosotras no elegimos esto-->
+							<h1 class="main-title"><%= locals.usuarioLogueado.Nombre %></h1>
 						</div>
 						<div>
 							<ul class="">
 								<li><%= locals.usuarioLogueado.Email %></li>
-								<!--<li>Productos: <%=//locals.usuarioLogueado.product.length %></li>-->
+								<li>Productos: <%=infoProducto.length %></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</section>
 	
-		<% } else { %>
+		<% } else { %><!--si esta logueado y el perfil no es suyo-->
 			<section class="info-usuario container products-wrapper">
 				<div class="row">
 					<div class="img-container offset-3 col-2">
@@ -39,17 +34,12 @@
 					</div>
 					<div class="data-container col-6">
 						<div class="d-flex align-items-center ">
-							<h1 class="main-title"><%= infoUsuario.Nombre %>
-								<a href="profile-edit">
-									<i class="fas fa-cog"></i>
-								</a>
-							</h1>
-							<a class="btn mt-3 ml-4" href="">SEGUIR</a><!--es de las electivas, nosotras no elegimos esto-->
+							<h1 class="main-title"><%= infoUsuario.Nombre %></h1>
 						</div>
 						<div>
 							<ul class="">
 								<li><%= infoUsuario.Email %></li>
-								<li><a href="productos/detalle/<%= infoProducto.ID %>">Productos: <%=infoProducto.length %></a></li>
+								<li>Productos: <%=infoProducto.length %></li>
 							</ul>
 						</div>
 					</div>
@@ -58,7 +48,7 @@
 	  <% } %> 
 	  
     <% } else { %>
-        <%- include('./partials/headerDeslogueado') %>
+        <%- include('./partials/headerDeslogueado') %><!--Si no esta logueado le apareceran asi las cosas-->
 		<section class="info-usuario container products-wrapper">
 			<div class="row">
 				<div class="img-container offset-3 col-2">
@@ -67,11 +57,8 @@
 				<div class="data-container col-6">
 					<div class="d-flex align-items-center ">
 						<h1 class="main-title"><%= infoUsuario.Nombre %>
-							<a href="profile-edit">
-								<i class="fas fa-cog"></i>
-							</a>
+							<a href="profile-edit"></a>
 						</h1>
-						<a class="btn mt-3 ml-4" href="">SEGUIR</a><!--es de las electivas, nosotras no elegimos esto-->
 					</div>
 					<div>
 						<ul class="">

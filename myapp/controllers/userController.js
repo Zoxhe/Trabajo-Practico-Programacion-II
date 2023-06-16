@@ -80,7 +80,7 @@ const userController = {
 
   },
   //   *******
-  profileEdit: function (req, res) {//VER QUE ONDA ESTO, PORQUE NO LLEVA A NINGUN LADO
+  /*profileEdit: function (req, res) {//VER QUE ONDA ESTO, PORQUE NO LLEVA A NINGUN LADO
     if (req.session.usuarioLogueado == undefined) {
         res.redirect("/users/login");
     } else {
@@ -89,7 +89,7 @@ const userController = {
         infoUsuario: usuarios.usuario,
         });
     }
-  },
+  },*/
   //   *******
   register: function (req, res) {
     if (req.session.usuarioLogueado == undefined) {
