@@ -114,6 +114,7 @@ const productController = {
             where: [
                 {ID:id}
             ]
+     
         }).then((result) => {
             return res.redirect('/')
         }).catch((error) => {
