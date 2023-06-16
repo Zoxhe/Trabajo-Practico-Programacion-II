@@ -13,7 +13,7 @@ const productController = {
         //limit:10    deberiamos limitar la cantidad de resultados
       })
       .then(function (result) {
-        
+            //return res.send(result[5])
           return res.render('index', { autos: result });  
       })
       .catch(function (err){
@@ -82,10 +82,13 @@ const productController = {
         productos.findByPk(id)
         .then((result) => {
             console.log(result);
-            if(req.session.usuarioLogueado.Id==result.IDUser){
-            return res.render("product-edit", { productos: result })
-        }
+            if(req.session.usuarioLogueado != undefined ){
+                if(req.session.usuarioLogueado.Id==result.IDUser){
+                    return res.render("product-edit", { productos: result });
+                }else{ return res.send('No puede editar proyectos ajenos')}
+            }else{ return res.render ('login');}
         })
+
         .catch((err) => {
         console.log(err);
         });
