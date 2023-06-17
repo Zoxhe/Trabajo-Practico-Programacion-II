@@ -76,12 +76,20 @@
 						<% } %>
 
 					</section>
-					<form class="form" method="POST" action="/productos/detalle/<%=productos.ID %>">
-						<input class="form-input" type="text" id="Comentario" name="Comentario" placeholder="Agregar comentario">
-						<input type="hidden" class="form-input" id="IDUser" name="IDUser" value=<%=locals.usuarioLogueado.Id%>>
-						<input type="hidden" class="form-input" id="IDproduct" name="IDproduct" value=<%=productos.ID%>>
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
+					
+					<% if (locals.usuarioLogueado!= undefined) { %>
+						<form class="form" method="POST" action="/productos/detalle/<%=productos.ID %>">
+							<input class="form-input" type="text" id="Comentario" name="Comentario" placeholder="Agregar comentario">
+							<input type="hidden" class="form-input" id="IDUser" name="IDUser" value=<%=locals.usuarioLogueado.Id%>>
+							<input type="hidden" class="form-input" id="IDproduct" name="IDproduct" value=<%=productos.ID%>>
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+						
+					<% } else { %>
+						<p class="product-detail-description" > 
+							Debe estar logueado para comentar  
+						</p>
+				  <% } %> 
 					<hr>
 				</div>
 			</div>
