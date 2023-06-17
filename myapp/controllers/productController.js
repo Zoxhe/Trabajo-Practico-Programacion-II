@@ -1,4 +1,5 @@
-const { or } = require('sequelize');
+//const { or } = require('sequelize'); no la usamos, era de prueba
+
 const db = require('../database/models'); //requerimos los modelos.
 
 const productos = db.product; //Alias del modelo
