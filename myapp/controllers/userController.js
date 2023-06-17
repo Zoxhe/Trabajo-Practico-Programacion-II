@@ -1,8 +1,7 @@
-// const usuarios = require('../data/datos');
 
 const db = require("../database/models"); //requerimos los modelos.
 const bcrypt = require("bcryptjs"); //requerimos bcryptjs para encriptar las contraseñas.
-//Seleccionamos el modelo sobre el cual queremos aplicar el método findAll(). En este caso: producto
+
 const usuarios = db.user; //Alias del modelo
 const producto = db.product;
 
@@ -30,21 +29,6 @@ const userController = {
   },
   profile: (req, res) => {
     let id = req.params.id;
-
-    /*  let relacion={
-             include: [{association: "product",include:[{association:"comentarios"}]}],
-             order: [ ['createdAt', 'DESC']]
- 
-         }
-         usuarios.findByPk(id,relacion)
-         .then(function (result) {
-             console.log(result);
-             return res.render('profile', { infoUsuario: result });  
-         })
-         .catch(function (err){
-             console.log(err);
-       
-         });  */
 
     let relacion = {
       include: [{ association: "user" }],
@@ -80,7 +64,7 @@ const userController = {
 
   },
   //   *******
-  /*profileEdit: function (req, res) {//VER QUE ONDA ESTO, PORQUE NO LLEVA A NINGUN LADO
+  /*profileEdit: function (req, res) {//Nosotras no elegimos esta electiva
     if (req.session.usuarioLogueado == undefined) {
         res.redirect("/users/login");
     } else {

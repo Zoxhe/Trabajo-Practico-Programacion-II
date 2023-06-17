@@ -125,4 +125,5 @@ insert into comentarios values (default,2,10,' lo amo',default,default);
 insert into comentarios values (default,3,10,'quiero comprar otro',default,default);
 insert into comentarios values (default,4,10,'autazo',default,default);
 insert into comentarios values (default,5,10,'despúes de años al fin lo pude comprar',default,default);
+insert into comentarios values (default,5,10,'buenardo',default,default);
 
