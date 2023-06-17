@@ -6,6 +6,7 @@ const productController = require('../controllers/productController');
 
 /* GET detalle del producto */
 router.get('/detalle/:id', productController.detalle);
+router.post('/detalle/:id', productController.comentariosagregar);
 
 /* GET Mostrar forms para agregar producto */
 router.get('/agregar', productController.mostrarFormAgregar);

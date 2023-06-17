@@ -5,6 +5,8 @@ const { or } = require('sequelize');
 const db = require('../database/models'); //requerimos los modelos.
 //Seleccionamos el modelo sobre el cual queremos aplicar el método findAll(). En este caso: producto
 const productos = db.product; //Alias del modelo
+const comentarios =db.comentarios;
+
 const productController = {
     findAll: (req, res) => {
       productos.findAll({
@@ -72,6 +74,16 @@ const productController = {
         let info= req.body;
         productos.create(info)
         .then((result)=>{
+            return res.redirect('/');
+        }).catch((error)=>{
+            console.log(error);
+        });
+    },
+    comentariosagregar:(req,res)=>{
+        let Comentario= req.body;
+        comentarios.create(Comentario)
+        .then((result)=>{
+            //res.send(result)
             return res.redirect('/');
         }).catch((error)=>{
             console.log(error);
