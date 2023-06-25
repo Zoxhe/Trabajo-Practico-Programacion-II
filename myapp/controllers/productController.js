@@ -78,11 +78,12 @@ const productController = {
         });
     },
     comentariosagregar:(req,res)=>{
+        let id = req.params.id;
         let Comentario= req.body;
         comentarios.create(Comentario)
         .then((result)=>{
             //res.send(result)
-            return res.redirect('/');
+            return res.redirect("/productos/detalle/" + id );
         }).catch((error)=>{
             console.log(error);
         });
